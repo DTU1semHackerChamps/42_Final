@@ -9,5 +9,5 @@ public abstract class Tile {
         this.currentPlayer = currentPlayer;
     }
 
-    public abstract void Tile();
+    public abstract void executeTile();
 }
