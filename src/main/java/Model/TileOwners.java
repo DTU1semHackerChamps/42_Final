@@ -2,13 +2,10 @@ package Model;
 
 public class TileOwners {
 
-    private int arrayLength;
     private int[] tileOwners;
 
     public TileOwners (int length) {
-
-        arrayLength = length;
-        tileOwners = new int[arrayLength];
+        tileOwners = new int[length];
     }
 
     public int[] getTileOwners() {
@@ -28,4 +25,6 @@ public class TileOwners {
     public void setTileOwner(int position, int owner) {
         tileOwners[position] = owner;
     }
+
+
 }
