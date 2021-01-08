@@ -21,6 +21,39 @@ public class Player {
 
     }
 
+
+    public int getBalance() {
+        return balance;
+    }
+
+    public void setBalance(int balance) {
+        this.balance = balance;
+    }
+
+    public int getPosition() {
+        return position;
+    }
+
+    public void setPosition(int position) {
+        this.position = position;
+    }
+
+    public String getPlayerName() {
+        return playerName;
+    }
+
+    public void setPlayerName(String playerName) {
+        this.playerName = playerName;
+    }
+
+    public boolean isJailCard() {
+        return jailCard;
+    }
+
+    public void setJailCard(boolean jailCard) {
+        this.jailCard = jailCard;
+    }
+
     public int getPlayerNum() {
         return playerNum;
     }
@@ -28,106 +61,5 @@ public class Player {
     public void setPlayerNum(int playerNum) {
         this.playerNum = playerNum;
     }
-
-
-
-
-    public void setJailCard(boolean jailCard) {
-        this.jailCard = jailCard;
-    }
-
-    public boolean isJailCard() {
-        return jailCard;
-    }
-
-    public void setBalance(int balance) {
-        this.balance = balance;
-    }
-
-    /**
-     * adds tile balance to player balance
-     * @return player balance
-     */
-    public int getBalance() {
-        return balance;
-    }
-
-    public int addBalance(int tileBalanceChange){
-        balance += tileBalanceChange;
-        if (balance < 0){
-            balance = 0;
-        }
-        return balance;
-    }
-
-    public void setPosition(int position) {
-        this.position = position;
-    }
-
-    public int getPosition() {
-        return position;
-    }
-
-    /**
-     * add faceValue to the player's current position
-     * @param faceValue
-     * @return player position
-     */
-    public int addPosition(int faceValue){
-        position += faceValue;
-
-        if(position > 12){
-            position -= 12;
-        }
-        return position;
-    }
-
-
-    /**
-     * Checks if winning requirement is reached
-     * @return returns if a player has won
-     */
-
-
-    public void setPlayerName(String playerName) {
-        this.playerName = playerName;
-    }
-
-    public String getPlayerName() {
-        return playerName;
-    }
-
-
-
-    // From here new code added by Zahed.
-
-
-//    private boolean isDeath;
-//    private boolean isWinner;
-
-//    public  void PlayerSartPos(){
-//        balance = 0;
-//        isDeath = false;
-//        isWinner = false;
-//
-//
-//    }
-
-    String[] player;
-
-    public void PlayerList(int numOfPlayer){
-
-        for (int i = 0; i < numOfPlayer; i++) {
-            player = new String[i];
-        }
-
-    }
-
-    public int nextPlayer(int index){
-        index = ++index % player.length;
-        return index;
-    }
-
-
 }
 
