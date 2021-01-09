@@ -1,0 +1,80 @@
+tileName0
+Start
+tileName1
+Rødovrevej
+tileName2
+Prøv lykken
+tileName3
+Hvidovrevej
+tileName4
+Betal 2000kr
+tileName5
+Færge 1
+tileName6
+Roskildevej
+tileName7
+Prøv lykken
+tileName8
+Valby Langgade
+tileName9
+Allégade
+tileName10
+Fængsel
+tileName11
+Frederiksberg Allé
+tileName12
+Tuborg
+tileName13
+Bülowsvej
+tileName14
+Gl. Kongevej
+tileName15
+Færge 2
+tileName16
+Bernstorffsvej
+tileName17
+Prøv Lykken
+tileName18
+Hellerupvej
+tileName19
+Strandvejen
+tileName20
+Parkering
+tileName21
+Trianglen
+tileName22
+Prøv Lykken
+tileName23
+Østerbrogade
+tileName24
+Grønningen
+tileName25
+Færge 3
+tileName26
+Bredgade
+tileName27
+Kgs. Nytorv
+tileName28
+Coca Cola
+tileName29
+Østergade
+tileName30
+Gå til fængsel
+tileName31
+Amagertorv
+tileName32
+Vimmelskattet
+tileName33
+Prøv lykken
+tileName34
+Nygade
+tileName35
+Færge 4
+tileName36
+Prøv lykke
+tileName37
+Frederiksberggade
+tileName38
+Betal 2000kr
+tileName39
+Rådhuspladsen

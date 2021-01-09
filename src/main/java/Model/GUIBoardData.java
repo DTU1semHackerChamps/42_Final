@@ -18,7 +18,8 @@ public class GUIBoardData {
     }
 
     /*
-    Colors in HSV
+    Colors in HSV:
+
     backgroundClr: 46,51,76
     neutralTiles: 0,0,88
     jail: 0,0,15
@@ -127,7 +128,7 @@ public class GUIBoardData {
         tilesData[38] = new GUIBoardData(stringList.get("tileName38"), stringList.get("tileDesc38"), 0.00f,0f,0.88f); //neutralTiles
         tilesData[39] = new GUIBoardData(stringList.get("tileName39"), stringList.get("tileDesc39"), 0.78f,0.65f,0.24f); //purple
 
-        return tilesData[];
+        return tilesData;
     }
 
 
