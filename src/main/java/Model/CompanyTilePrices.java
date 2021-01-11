@@ -15,7 +15,7 @@ public class CompanyTilePrices {
         this.priceOfCompany = priceOfCompany;
     }
 
-    /**
+    /** data object
      * array with price data for shipping companies (data 5, 15, 25, 35), and breweries (data 12, 28)
      * @return data
      */
@@ -33,6 +33,12 @@ public class CompanyTilePrices {
         return data;
     }
 
+    /** data object
+     * array of the price stages
+     * @param position
+     * @param companyData
+     * @return
+     */
     public static int[] shippingPrice(int position, CompanyTilePrices[] companyData){
         int[] rentStage = new int[4];
         rentStage[0] = companyData[position].getRentOneShipping();
