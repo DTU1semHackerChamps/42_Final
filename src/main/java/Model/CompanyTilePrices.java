@@ -15,6 +15,10 @@ public class CompanyTilePrices {
         this.priceOfCompany = priceOfCompany;
     }
 
+    /**
+     * array with price data for shipping companies (data[0]), and breweries (data[1])
+     * @return data
+     */
     private static CompanyTilePrices[] companyData(){
         CompanyTilePrices[] data = new CompanyTilePrices[2];
         data[0] = new CompanyTilePrices(500, 1000, 2000, 4000, 4000);
