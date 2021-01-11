@@ -18,10 +18,10 @@ public class GameController {
         // loads the file of the corresponding language input string
         HashMap<String, String> stringList = Language.languageInit("Danish");
 
-        GUI_Field[] fields = new GUI_Field[24];
+        GUI_Field[] fields = new GUI_Field[40];
 
 
-        GUI gui = BoardView.initBoard(stringList, fields = new GUI_Field[40], GUIBoardData.tilesData(stringList), BuildableTilePrices.tilesData());
+        GUI gui = BoardView.initBoard(stringList, fields, GUIBoardData.tilesData(stringList), BuildableTilePrices.tilesData());
 
         // Currentplayer is used to decide which player is rolling the dice and affected by the balance change, position change and extra turn
 
