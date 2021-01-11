@@ -2,6 +2,7 @@ package Controller;
 
 import Model.*;
 import View.BoardView;
+import View.BuildingsView;
 import View.PlayerView;
 import gui_fields.GUI_Field;
 import gui_fields.GUI_Player;
@@ -16,7 +17,6 @@ public class GameController {
     public static void main(String[] args) throws IOException {
         // loads the file of the corresponding language input string
         HashMap<String, String> stringList = Language.languageInit("Danish");
-
         GUI_Street[] fields = new GUI_Street[40];
 
         GUI gui = BoardView.initBoard(stringList, fields, GUIBoardData.tilesData(stringList), BuildableTilePrices.tilesData(), CompanyTilePrices.companyData());
