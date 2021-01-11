@@ -78,3 +78,5 @@ tileName38
 Betal 2000kr
 tileName39
 Rådhuspladsen
+VisitJailField
+På besøg

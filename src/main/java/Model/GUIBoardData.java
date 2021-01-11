@@ -6,15 +6,35 @@ public class GUIBoardData {
 
     private String streetName;
     private String tileDescription;
-    private float hue, sat, val;
+    private float hue, sat, bright;
 
-    public GUIBoardData(String streetName, String tileDescription, float hue, float sat, float val){
+    public GUIBoardData(String streetName, String tileDescription, float hue, float sat, float bright){
         this.streetName = streetName;
         this.tileDescription = tileDescription;
         this.hue = hue;
         this.sat = sat;
-        this.val = val;
+        this.bright = bright;
 
+    }
+
+    public String getStreetName() {
+        return streetName;
+    }
+
+    public String getTileDescription() {
+        return tileDescription;
+    }
+
+    public float getHue() {
+        return hue;
+    }
+
+    public float getSat() {
+        return sat;
+    }
+
+    public float getBright() {
+        return bright;
     }
 
     /*
@@ -86,6 +106,7 @@ public class GUIBoardData {
 
     public static GUIBoardData [] tilesData(HashMap<String, String> stringList){
         GUIBoardData[] tilesData = new GUIBoardData[40];
+
 
         tilesData[0] = new GUIBoardData(stringList.get("tileName0"), stringList.get("tileDesc0"), 0.99f,0.74f,0.62f); //start red
         tilesData[1] = new GUIBoardData(stringList.get("tileName1"), stringList.get("tileDesc1"), 0.57f,1f,0.36f); //blue
