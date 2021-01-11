@@ -25,6 +25,8 @@ public class GameController {
         Player[] players = Player.playerList(PlayerView.getNumberOfPlayers(gui, stringList));
 
         GUI_Player[] gui_players = PlayerView.displayAddPlayer(stringList, gui, fields, players);
+        players[0].setPosition(5);
+        PlayerView.updatePlayer(fields,gui_players,players);
 
     }
 
