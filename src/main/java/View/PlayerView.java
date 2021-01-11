@@ -55,6 +55,14 @@ public class PlayerView {
         return numberOfPlayers;
     }
 
+    /**
+     * The outer for-loop invokes all the tiles and the inner for-loop invokes all the participants (2-6).
+     * And as a tile occurs, the if statement in the scope of the inner loop sets the players' position.
+     * @param fields The GUI_Field[] array.
+     * @param gui_Players The GUI_Player[] array.
+     * @param players Player array.
+     */
+
     public static void updatePosition(GUI_Field[] fields, GUI_Player[] gui_Players, Player[] players) {
 
         for (int i = 0; i < fields.length; i++) {
