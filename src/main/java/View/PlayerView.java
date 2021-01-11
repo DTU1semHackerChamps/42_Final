@@ -14,7 +14,8 @@ import java.util.concurrent.TimeUnit;
 
 public class PlayerView {
     /**
-     * This method is used to add a GUI_Player to the GUI and it also initializes and returns that GUI_Player
+     * This method is used to add a GUI_Player to the GUI and it also initializes and returns that GUI_Player.
+     * Each palyer hase a designated color.
      * @param stringList is the names of the characters taken form a list of strings
      * @param gui The current GUI
      * @param fields The current GUI_Field[]

@@ -31,6 +31,10 @@ public class Player {
         return position;
     }
 
+    /**
+     * Gives the player 4000kr of passing start.
+     * @param newPosition
+     */
     public void setPosition(int newPosition) {
 
         if (position > newPosition) {
@@ -61,6 +65,11 @@ public class Player {
 
     }
 
+    /**
+     * Ensures that the position does not exceed the tile array that is playable,
+     * and gives the player 4000 kr for passing start.
+     * @param faceValue Sum of the dice
+     */
     public void addPosition(int faceValue){
         position = faceValue;
 
@@ -71,6 +80,11 @@ public class Player {
 
     }
 
+    /**
+     * Creates an array of players with balance pf 30000 kr.
+     * @param numOfPlayers An integer value corresponding with the number of players in the game
+     * @return Player array
+     */
     public static Player[] playerList(int numOfPlayers){
 
         Player[] players = new Player[numOfPlayers];
