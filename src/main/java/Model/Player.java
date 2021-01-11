@@ -4,18 +4,16 @@ package Model;
 public class Player {
     private int balance;
     private int position;
-    private String playerName;
     private boolean jailCard;
     private int playerNum;
 
 
 
-    public Player(int balance, int position, String playerName, boolean jailCard,int playerNum){
+    public Player(int balance, int position, boolean jailCard,int playerNum){
 
         this.balance = balance;
         this.position = position;
         this.jailCard = jailCard;
-        this.playerName = playerName;
         this.playerNum = playerNum;
 
     }
@@ -33,17 +31,14 @@ public class Player {
         return position;
     }
 
-    public void setPosition(int position) {
-        this.position = position;
+    public void setPosition(int newPosition) {
+
+        if (position > newPosition) {
+            balance += 4000;
+        }
+        position = newPosition;
     }
 
-    public String getPlayerName() {
-        return playerName;
-    }
-
-    public void setPlayerName(String playerName) {
-        this.playerName = playerName;
-    }
 
     public boolean isJailCard() {
         return jailCard;
@@ -59,6 +54,32 @@ public class Player {
 
     public void setPlayerNum(int playerNum) {
         this.playerNum = playerNum;
+    }
+
+    public void addBalance(int balanceChance){
+        balance += balanceChance;
+
+    }
+
+    public void addPosition(int faceValue){
+        position = faceValue;
+
+        if(position > 39){
+            position -= 40;
+            balance += 4000;
+        }
+
+    }
+
+    public static Player[] playerList(int numOfPlayers){
+
+        Player[] players = new Player[numOfPlayers];
+
+        for(int i = 0; i <= numOfPlayers; i++){
+            players[i] = new Player(30000, 0,false, i );
+        }
+
+        return players;
     }
 }
 
