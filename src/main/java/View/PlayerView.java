@@ -49,6 +49,12 @@ public class PlayerView {
         return guiPlayerList;
     }
 
+    /**
+     * The method is responsible to display a message and waits for participants to response.
+     * @param gui
+     * @param stringList
+     * @return returns a int value as the participants responded.
+     */
     public static int getNumberOfPlayers(GUI gui, HashMap<String, String> stringList){
         int numberOfPlayers = Integer.parseInt(gui.getUserButtonPressed(stringList.get("ChooseCharacter1"), "2", "3", "4", "5", "6"),10);;
 
