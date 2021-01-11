@@ -3,7 +3,9 @@ package View;
 import Model.BuildableTilePrices;
 import Model.CompanyTilePrices;
 import Model.GUIBoardData;
+import Model.Player;
 import gui_fields.GUI_Field;
+import gui_fields.GUI_Player;
 import gui_fields.GUI_Street;
 import gui_main.GUI;
 
@@ -81,6 +83,13 @@ public class BoardView {
 
 
         return gui;
+
+    }
+
+    public static void  updatePlayerBalance(GUI gui, GUI_Player[] guiPlayer, Player[] players){
+        for (int i = 0; i < players.length; i++) {
+            guiPlayer[i].setBalance(players[i].getBalance());
+        }
 
     }
 
