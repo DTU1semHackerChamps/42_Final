@@ -26,7 +26,6 @@ public class GameController {
         // Currentplayer is used to decide which player is rolling the dice and affected by the balance change, position change and extra turn
 
 
-
     }
 
 }

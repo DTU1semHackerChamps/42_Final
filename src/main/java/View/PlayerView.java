@@ -1,5 +1,6 @@
 package View;
 
+import Model.Player;
 import gui_fields.GUI_Car;
 import gui_fields.GUI_Player;
 import gui_main.GUI;
@@ -28,20 +29,7 @@ public class PlayerView {
         for (int i = 0; i < player.length; i++) {
             GUI_Car carColor = new GUI_Car();
 
-            if(stringList.get("CatCharacter").equals(player[i].getPlayerName())) {
-                carColor.setPrimaryColor(Color.orange);
-            }
-            else if(stringList.get("DogCharacter").equals(player[i].getPlayerName())){
-                carColor.setPrimaryColor(Color.black);
-            }
-            else if(stringList.get("CarCharacter").equals(player[i].getPlayerName())){
-                carColor.setPrimaryColor(Color.green);
-            }
-            else if(stringList.get("BoatCharacter").equals(player[i].getPlayerName())){
-                carColor.setPrimaryColor(Color.blue);
-            }
-
-            GUI_Player gui_Player = new GUI_Player(player[i].getPlayerName(),player[i].getBalance(), carColor);
+            GUI_Player gui_Player = new GUI_Player(gui.getUserString("Skriv navn her: ") ,player[i].getBalance(), carColor);
             gui.addPlayer(gui_Player);
             fields[0].setCar(gui_Player, true);
             guiPlayerList[i] = gui_Player;
