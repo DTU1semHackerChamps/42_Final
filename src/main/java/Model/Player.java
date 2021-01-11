@@ -1,6 +1,5 @@
 package Model;
 
-import ChanceCard.JailCard;
 
 public class Player {
     private int balance;

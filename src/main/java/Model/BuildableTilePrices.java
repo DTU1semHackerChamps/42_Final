@@ -21,8 +21,11 @@ public class BuildableTilePrices {
         this.priceOfHouse = priceOfHouse;
     }
 
-    private static BuildableTilePrices[] tilesData(){
+    public static BuildableTilePrices[] tilesData(){
         BuildableTilePrices[] data = new BuildableTilePrices[40];
+        for(int i = 0; i < 40; i++){
+            data[i] = new BuildableTilePrices(0,0,0,0,0,0,0,0);
+        }
         data[1] = new BuildableTilePrices(50,250,750,2250 ,4000,6000,1200,1000);
         data[3] = new BuildableTilePrices(50,250,750,2250 ,4000,6000,1200,1000);
         data[6] = new BuildableTilePrices(100,600,1800,5400,8000,11000,2000,1000);
