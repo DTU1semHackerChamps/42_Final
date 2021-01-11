@@ -21,7 +21,7 @@ public class PlayerView {
      * @param player The name displayed in the GUI by the score
      * @return
      */
-    public static GUI_Player[] displayAddPlayer(HashMap<String, String> stringList, GUI gui, GUI_Field[] fields, Player[] player){
+    public static GUI_Player[] displayAddPlayer(GUI gui, GUI_Field[] fields, Player[] player){
 
 
         GUI_Player[] guiPlayerList = new GUI_Player[4];
@@ -36,5 +36,11 @@ public class PlayerView {
         }
 
         return guiPlayerList;
+    }
+
+    public static int getNumberOfPlayers(GUI gui, HashMap<String, String> stringList){
+        int numberOfPlayers = Integer.parseInt(gui.getUserButtonPressed(stringList.get("ChooseCharacter1"), "2", "3", "4", "5", "6"),10);;
+
+        return numberOfPlayers;
     }
 }

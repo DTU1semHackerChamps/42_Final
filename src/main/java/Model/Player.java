@@ -75,7 +75,7 @@ public class Player {
 
         Player[] players = new Player[numOfPlayers];
 
-        for(int i = 0; i <= numOfPlayers; i++){
+        for(int i = 0; i < numOfPlayers; i++){
             players[i] = new Player(30000, 0,false, i );
         }
 
