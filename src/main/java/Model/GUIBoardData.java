@@ -37,73 +37,12 @@ public class GUIBoardData {
         return bright;
     }
 
-    /*
-    Colors in HSV:
 
-    backgroundClr: 46,51,76
-    neutralTiles: 0,0,88
-    jail: 0,0,15
-    chanceCard: 0,0,15
-    start: 358,74,62
-    blue: 204,100,36
-    orange: 16,84,65
-    green: 48,98,55
-    grey: 60,11,40
-    red: 4,75,62
-    white: 29,19,69
-    yellow: 44,95,67
-    purple: 280,65,24
-    blueFerry: 204,97,38
-    redFerry: 359,78,58
-    brewery: 3,81,58
-
-    */
-
-    /*
-    StreetNames:
-
-    Start
-    Rødovrevej
-    Prøv lykken
-    Hvidovrevej
-    Betal 2000kr
-    Færge 1
-    Roskildevej
-    Prøv lykken
-    Valby Langgade
-    Allégade
-    Fængsel
-    Frederiksberg Allé
-    Tuborg
-    Bülowsvej
-    Gl. Kongevej
-    Færge 2
-    Bernstorffsvej
-    Prøv Lykken
-    Hellerupvej
-    Strandvejen
-    Parkering
-    Trianglen
-    Prøv Lykken
-    Østerbrogade
-    Grønningen
-    Færge 3
-    Bredgade
-    Kgs. Nytorv
-    Coca Cola
-    Østergade
-    Gå til fængsel
-    Amagertorv
-    Vimmelskattet
-    Prøv lykken
-    Nygade
-    Færge 4
-    Prøv lykke
-    Frederiksberggade
-    Betal 2000kr
-    Rådhuspladsen
+    /**
+     * Data object, an array of names, descriptions and HSB colors for the initBoard method in BoardView.
+     * @param stringList Collects the respective names form a .txt file.
+     * @return The array data for the initBoard method.
      */
-
     public static GUIBoardData [] tilesData(HashMap<String, String> stringList){
         GUIBoardData[] tilesData = new GUIBoardData[40];
 

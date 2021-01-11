@@ -62,6 +62,7 @@ public class PlayerView {
         return numberOfPlayers;
     }
 
+
     public static void updatePosition(GUI_Field[] fields, GUI_Player[] gui_Players, Player[] players) {
 
         for (int i = 0; i < fields.length; i++) {
@@ -79,7 +80,6 @@ public class PlayerView {
     }
 
     public static void displayDice(GUI gui,int dice1, int dice2){
-        //gui.setDice(dice1,dice2);
         gui.setDice(dice1,5,1,dice2,6,1);
 
 
