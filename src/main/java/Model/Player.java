@@ -4,21 +4,31 @@ package Model;
 public class Player {
     private int balance;
     private int position;
-    private String playerName;
+
     private boolean jailCard;
     private int playerNum;
 
 
 
-    public Player(int balance, int position, String playerName, boolean jailCard,int playerNum){
+    public Player(int balance, int position, boolean jailCard,int playerNum){
 
         this.balance = balance;
         this.position = position;
         this.jailCard = jailCard;
-        this.playerName = playerName;
         this.playerNum = playerNum;
 
     }
+
+    public static Player[] playersInit(int numOfPlayers) {
+        Player[] players = new Player[numOfPlayers];
+
+        for (int i = 0; i < numOfPlayers; i++) {
+            players[i] = new Player(15000, 0, false, i+1);
+
+        }
+        return players;
+    }
+
 
 
     public int getBalance() {
@@ -37,13 +47,6 @@ public class Player {
         this.position = position;
     }
 
-    public String getPlayerName() {
-        return playerName;
-    }
-
-    public void setPlayerName(String playerName) {
-        this.playerName = playerName;
-    }
 
     public boolean isJailCard() {
         return jailCard;

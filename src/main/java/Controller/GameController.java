@@ -20,6 +20,11 @@ public class GameController {
 
 
         GUI gui = BoardView.initBoard(stringList, fields, GUIBoardData.tilesData(stringList), BuildableTilePrices.tilesData());
+        //PlayerView playerView = new PlayerView();
+        int numOfPlayers = PlayerView.getParticipants(gui ,stringList);
+        Player [] players = Player.playersInit(numOfPlayers);
+
+        PlayerView.displayAddPlayer(stringList, gui, fields, players);
 
         // Currentplayer is used to decide which player is rolling the dice and affected by the balance change, position change and extra turn
 
@@ -29,23 +34,10 @@ public class GameController {
 
         Dice dice = new Dice(0);
 
-        PlayerView playerView = new PlayerView();
-        GUI gui2 = new GUI();
+        PlayerView.rollScreen(gui, "Press 'Roll' to roll: ", "Roll");
+        PlayerView.displayDice(gui, dice.rollDice(), dice.rollDice());
 
 
-
-        playerView.rollScreen(gui2, "Press 'Roll' to roll: ", "Roll");
-        playerView.displayDice(gui2, dice.rollDice(), dice.rollDice());
-
-
-        Player player2 = new Player(1000, 1,  gui.getUserString(stringList.get("typeName1")),false, 1);
-        Player player1 = new Player(1000, 1,  gui.getUserString(stringList.get("typeName2")), false, 2);
-
-        GUI_Player gui_Player1 = playerView.displayAddPlayer(gui, fields, player1.getPlayerName(), player1.getBalance(), true);
-        GUI_Player gui_Player2 = playerView.displayAddPlayer(gui, fields, player2.getPlayerName(), player2.getBalance(), false);
-
-
-        playerView.displayPosition(fields, 1,2, gui_Player1, gui_Player2);
 
 
 

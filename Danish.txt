@@ -80,3 +80,7 @@ tileName39
 Rådhuspladsen
 VisitJailField
 På besøg
+numberChoiceMsg
+Vælg antal spillere.
+writeNameMsg
+Skriv dit navn.
