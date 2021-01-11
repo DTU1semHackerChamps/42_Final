@@ -16,14 +16,20 @@ public class CompanyTilePrices {
     }
 
     /**
-     * array with price data for shipping companies (data[0]), and breweries (data[1])
+     * array with price data for shipping companies (data 5, 15, 25, 35), and breweries (data 12, 28)
      * @return data
      */
-    private static CompanyTilePrices[] companyData(){
-        CompanyTilePrices[] data = new CompanyTilePrices[2];
-        data[0] = new CompanyTilePrices(500, 1000, 2000, 4000, 4000);
-        data[1] = new CompanyTilePrices(0, 0, 0, 0, 3000);
-
+    public static CompanyTilePrices[] companyData(){
+        CompanyTilePrices[] data = new CompanyTilePrices[40];
+        for(int i = 0; i < 40; i++){
+            data[i] = new CompanyTilePrices(0,0,0,0,0);
+        }
+        data[5] = new CompanyTilePrices(500, 1000, 2000, 4000, 4000);
+        data[15] = new CompanyTilePrices(500, 1000, 2000, 4000, 4000);
+        data[25] = new CompanyTilePrices(500, 1000, 2000, 4000, 4000);
+        data[35] = new CompanyTilePrices(500, 1000, 2000, 4000, 4000);
+        data[12] = new CompanyTilePrices(0, 0, 0, 0, 3000);
+        data[28] = new CompanyTilePrices(0, 0, 0, 0, 3000);
         return data;
     }
 

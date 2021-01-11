@@ -1,9 +1,6 @@
 package Controller;
 
-import Model.BuildableTilePrices;
-import Model.GUIBoardData;
-import Model.Language;
-import Model.Player;
+import Model.*;
 import View.BoardView;
 import View.PlayerView;
 import gui_fields.GUI_Field;
@@ -22,10 +19,10 @@ public class GameController {
         GUI_Field[] fields = new GUI_Field[40];
 
 
-        GUI gui = BoardView.initBoard(stringList, fields, GUIBoardData.tilesData(stringList), BuildableTilePrices.tilesData());
-
-        // Currentplayer is used to decide which player is rolling the dice and affected by the balance change, position change and extra turn
-        Player[] players = Player.playerList(PlayerView.getNumberOfPlayers);
+        GUI gui = BoardView.initBoard(stringList, fields, GUIBoardData.tilesData(stringList), BuildableTilePrices.tilesData(), CompanyTilePrices.companyData());
+//
+//        // Currentplayer is used to decide which player is rolling the dice and affected by the balance change, position change and extra turn
+//        Player[] players = Player.playerList(PlayerView.getNumberOfPlayers);
 
     }
 
