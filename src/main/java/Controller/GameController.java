@@ -5,6 +5,7 @@ import View.BoardView;
 import View.PlayerView;
 import gui_fields.GUI_Field;
 import gui_fields.GUI_Player;
+import gui_fields.GUI_Street;
 import gui_main.GUI;
 
 import java.io.IOException;
@@ -16,8 +17,7 @@ public class GameController {
         // loads the file of the corresponding language input string
         HashMap<String, String> stringList = Language.languageInit("Danish");
 
-        GUI_Field[] fields = new GUI_Field[40];
-
+        GUI_Street[] fields = new GUI_Street[40];
 
         GUI gui = BoardView.initBoard(stringList, fields, GUIBoardData.tilesData(stringList), BuildableTilePrices.tilesData(), CompanyTilePrices.companyData());
 
@@ -25,7 +25,6 @@ public class GameController {
         Player[] players = Player.playerList(PlayerView.getNumberOfPlayers(gui, stringList));
 
         GUI_Player[] gui_players = PlayerView.displayAddPlayer(stringList, gui, fields, players);
-
     }
 
 }
