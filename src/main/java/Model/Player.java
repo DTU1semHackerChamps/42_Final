@@ -4,7 +4,6 @@ package Model;
 public class Player {
     private int balance;
     private int position;
-
     private boolean jailCard;
     private int playerNum;
 
@@ -19,17 +18,6 @@ public class Player {
 
     }
 
-    public static Player[] playersInit(int numOfPlayers) {
-        Player[] players = new Player[numOfPlayers];
-
-        for (int i = 0; i < numOfPlayers; i++) {
-            players[i] = new Player(15000, 0, false, i+1);
-
-        }
-        return players;
-    }
-
-
 
     public int getBalance() {
         return balance;
@@ -43,8 +31,12 @@ public class Player {
         return position;
     }
 
-    public void setPosition(int position) {
-        this.position = position;
+    public void setPosition(int newPosition) {
+
+        if (position > newPosition) {
+            balance += 4000;
+        }
+        position = newPosition;
     }
 
 
@@ -62,6 +54,32 @@ public class Player {
 
     public void setPlayerNum(int playerNum) {
         this.playerNum = playerNum;
+    }
+
+    public void addBalance(int balanceChance){
+        balance += balanceChance;
+
+    }
+
+    public void addPosition(int faceValue){
+        position = faceValue;
+
+        if(position > 39){
+            position -= 40;
+            balance += 4000;
+        }
+
+    }
+
+    public static Player[] playerList(int numOfPlayers){
+
+        Player[] players = new Player[numOfPlayers];
+
+        for(int i = 0; i < numOfPlayers; i++){
+            players[i] = new Player(30000, 0,false, i );
+        }
+
+        return players;
     }
 }
 

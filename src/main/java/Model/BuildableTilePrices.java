@@ -21,6 +21,10 @@ public class BuildableTilePrices {
         this.priceOfHouse = priceOfHouse;
     }
 
+    /** data object
+     * array over the various prices for the different ownable grounds
+     * @return data
+     */
     public static BuildableTilePrices[] tilesData(){
         BuildableTilePrices[] data = new BuildableTilePrices[40];
         for(int i = 0; i < 40; i++){
@@ -52,6 +56,12 @@ public class BuildableTilePrices {
         return data;
     }
 
+    /** data object
+     * array of the different price stages
+     * @param position
+     * @param tilesData
+     * @return
+     */
     public static int[] rentPrice(int position, BuildableTilePrices[] tilesData){
         int[] rentStage = new int[6];
         rentStage[0] = tilesData[position].getRentOfGround();
