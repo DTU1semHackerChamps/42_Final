@@ -5,6 +5,7 @@ import Model.GUIBoardData;
 import Model.Language;
 import Model.Player;
 import View.BoardView;
+import View.PlayerView;
 import gui_fields.GUI_Field;
 import gui_fields.GUI_Player;
 import gui_main.GUI;
@@ -24,7 +25,7 @@ public class GameController {
         GUI gui = BoardView.initBoard(stringList, fields, GUIBoardData.tilesData(stringList), BuildableTilePrices.tilesData());
 
         // Currentplayer is used to decide which player is rolling the dice and affected by the balance change, position change and extra turn
-
+        Player[] players = Player.playerList(PlayerView.getNumberOfPlayers);
 
 
     }
