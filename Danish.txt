@@ -82,3 +82,5 @@ VisitJailField
 På besøg
 ChooseCharacter1
 Vælg hvor mange spillere der skal spille.
+writeNameMsg
+Skriv navn på spiller

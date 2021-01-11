@@ -38,7 +38,7 @@ public class PlayerView {
 
             }
 
-            String name = gui.getUserString(stringList.get("writeNameMsg"));
+            String name = gui.getUserString(stringList.get("writeNameMsg") + " " + (i + 1));
             GUI_Player gui_Player = new GUI_Player(name, player[i].getBalance(), carColor);
 
             gui.addPlayer(gui_Player);
