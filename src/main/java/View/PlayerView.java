@@ -55,7 +55,7 @@ public class PlayerView {
         return numberOfPlayers;
     }
 
-    public static void updatePlayer(GUI_Field[] fields, GUI_Player[] gui_Players, Player[] players) {
+    public static void updatePosition(GUI_Field[] fields, GUI_Player[] gui_Players, Player[] players) {
 
         for (int i = 0; i < fields.length; i++) {
             fields[i].removeAllCars();
@@ -70,4 +70,25 @@ public class PlayerView {
         }
 
     }
+
+    public static void displayDice(GUI gui,int dice1, int dice2){
+        //gui.setDice(dice1,dice2);
+        gui.setDice(dice1,5,1,dice2,6,1);
+
+
+    }
+
+    public static boolean rollScreen(GUI gui, String rollScreenMessage, String rollButton){
+        boolean buttonPress;
+        buttonPress = gui.getUserButtonPressed( rollScreenMessage, rollButton).equals(rollButton);
+        return buttonPress;
+    }
+
+    public static void updateBalances(GUI_Player[] gui_players, Player[] players) {
+        for (int i = 0; i < players.length; i++) {
+            int balance = players[i].getBalance();
+            gui_players[i].setBalance(balance);
+        }
+    }
+
 }
