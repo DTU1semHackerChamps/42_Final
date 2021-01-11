@@ -15,8 +15,8 @@ import java.util.concurrent.TimeUnit;
 public class PlayerView {
     /**
      * This method is used to add a GUI_Player to the GUI and it also initializes and returns that GUI_Player.
-     * Each palyer hase a designated color.
-     * @param stringList is the names of the characters taken form a list of strings
+     * Each player hase a designated color.
+     * @param stringList is the message for character creation
      * @param gui The current GUI
      * @param fields The current GUI_Field[]
      * @param player The name displayed in the GUI by the score
@@ -50,8 +50,14 @@ public class PlayerView {
         return guiPlayerList;
     }
 
+    /**
+     * Creates 5 buttons on the GUI to select the number of players.
+     * @param gui The current GUI
+     * @param stringList is the message for choosing the playernumber
+     * @return An integer value of the number of players
+     */
     public static int getNumberOfPlayers(GUI gui, HashMap<String, String> stringList){
-        int numberOfPlayers = Integer.parseInt(gui.getUserButtonPressed(stringList.get("ChooseCharacter1"), "2", "3", "4", "5", "6"),10);;
+        int numberOfPlayers = Integer.parseInt(gui.getUserButtonPressed(stringList.get("ChoosePlayers"), "2", "3", "4", "5", "6"),10);;
 
         return numberOfPlayers;
     }
