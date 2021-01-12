@@ -62,6 +62,13 @@ public class PlayerView {
         return numberOfPlayers;
     }
 
+    /**
+     * The outer for-loop invokes all the tiles and the inner for-loop invokes all the participants (2-6).
+     * And as a tile occurs, the if statement in the scope of the inner loop sets the players' position.
+     * @param fields The GUI_Field[] array.
+     * @param gui_Players The GUI_Player[] array.
+     * @param players Player array.
+     */
 
     public static void updatePosition(GUI_Field[] fields, GUI_Player[] gui_Players, Player[] players) {
 
@@ -79,18 +86,36 @@ public class PlayerView {
 
     }
 
+    /**
+     * This method displays the face-value on the screen and it takes two parameters.
+     * @param gui the GUI package.
+     * @param dice1 face-value1
+     * @param dice2 face-value2
+     */
     public static void displayDice(GUI gui,int dice1, int dice2){
         gui.setDice(dice1,5,1,dice2,6,1);
 
-
     }
 
+    /**
+     * This method displays a message and waits for player to response by clicking the button,
+     * afterwards sends back a boolean value.
+     * @param gui the GUI package.
+     * @param rollScreenMessage the message that supposed to be on the screen.
+     * @param rollButton name of the button.
+     * @return returns a boolean value.
+     */
     public static boolean rollScreen(GUI gui, String rollScreenMessage, String rollButton){
         boolean buttonPress;
         buttonPress = gui.getUserButtonPressed( rollScreenMessage, rollButton).equals(rollButton);
         return buttonPress;
     }
 
+    /**
+     * The for-loop is responsible to call all the players and as the players occur one by one sets their new positions.
+     * @param gui_players the gui_players array.
+     * @param players Players array.
+     */
     public static void updateBalances(GUI_Player[] gui_players, Player[] players) {
         for (int i = 0; i < players.length; i++) {
             int balance = players[i].getBalance();

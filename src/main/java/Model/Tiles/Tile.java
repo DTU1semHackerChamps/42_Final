@@ -1,5 +1,7 @@
 package Model.Tiles;
 
+import Model.Player;
+
 public abstract class Tile {
     protected Player[] players;
     protected Player currentPlayer;
