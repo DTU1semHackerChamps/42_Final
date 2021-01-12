@@ -29,8 +29,14 @@ public class GameController {
         PropertyGroup[] propertyGroup = PropertyGroup.tileGroups();
         TileOwners owner = new TileOwners();
         players[0].setPlayerNum(1);
+        owner.setTileOwner(1,1);
+        owner.setTileOwner(3,1);
 
-        System.out.println(PropertyGroup.hasGroup(owner,players[0],34,propertyGroup));
+        System.out.println(PropertyGroup.hasGroup(owner,players[0],1,propertyGroup));
+
+        while (true){
+
+        }
 
         // test af stuff fra linje 29- 37
         while (true) {
@@ -38,9 +44,9 @@ public class GameController {
             PlayerView.updatePosition(fields, gui_players, players);
             players[1].addBalance(-5000);
             PlayerView.updateBalances(gui_players, players);
-            int position = BuildingsView.buildingAvailability(GUIBoardData.tilesData(stringList),gui);
+            int position = BuildingsView.buildingAvailability(stringList, GUIBoardData.tilesData(stringList),gui, players[0], owner, propertyGroup);
             System.out.println(position);
-            BoardView.getEndOfTurn(gui, stringList);
+            BoardView.playerTurnMenu(gui, stringList);
         }
     }
 

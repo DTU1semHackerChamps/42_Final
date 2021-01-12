@@ -1,12 +1,15 @@
 package View;
 
-import Model.GUIBoardData;
-import Model.TileOwners;
+import Model.*;
 import gui_fields.GUI_Field;
 import gui_fields.GUI_Street;
 import gui_main.GUI;
 
+import java.io.IOException;
+import java.util.HashMap;
+
 public class BuildingsView {
+
 
     /**
      * Methode for updating the amount of buildings on a street.
@@ -32,15 +35,28 @@ public class BuildingsView {
      * @param gui
      * @return int value of the property position on the game board.
      */
-    public static int buildingAvailability(GUIBoardData[] boardData, GUI gui){
+    public static int buildingAvailability(HashMap<String, String> stringList,GUIBoardData[] boardData, GUI gui, Player currentPlayer, TileOwners owners, PropertyGroup[] propertyGroups){
         int propertyPosition = 0;
-        String[] streetNames = new String[boardData.length];
+        String[] tempStreetNames = new String[boardData.length];
+        int availableTiles = 0;
         for (int i = 0; i < boardData.length; i++) {
-            streetNames[i] = boardData[i].getStreetName();
+            tempStreetNames[i] = " ";
+            if((currentPlayer.getPlayerNum() == owners.getTileOwner(i) && PropertyGroup.hasGroup(owners,currentPlayer, i, propertyGroups))) {
+                tempStreetNames[i] = boardData[i].getStreetName();
+                availableTiles++;
+            }
         }
 
-        String propertyName = gui.getUserSelection("vælg grund", streetNames);
+        int k = 0;
+        String[] streetNames = new String [availableTiles];
+        for (int i = 0; i < boardData.length; i++) {
+            if(!tempStreetNames[i].equals(" ")){
+                streetNames[k] = tempStreetNames[i];
+                k++;
+            }
+        }
 
+        String propertyName = gui.getUserSelection(stringList.get("chooseBuildingProperty"), streetNames);
 
         for (int i = 0; i < boardData.length; i++) {
             if(propertyName == boardData[i].getStreetName()){

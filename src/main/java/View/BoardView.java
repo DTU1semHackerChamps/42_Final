@@ -71,17 +71,13 @@ public class BoardView {
 
     }
 
-    public static void  updatePlayerBalance(GUI gui, GUI_Player[] guiPlayer, Player[] players){
-        for (int i = 0; i < players.length; i++) {
-            guiPlayer[i].setBalance(players[i].getBalance());
-        }
-
-    }
-    public static boolean getEndOfTurn(GUI gui, HashMap<String, String> stringList){
+    public static void playerTurnMenu(GUI gui, HashMap<String, String> stringList){
+        String screenMsg = stringList.get("playerTurnChoise");
         String buttonMsg = stringList.get("endTurnMsg");
-        boolean EndOfTurn = gui.getUserButtonPressed("",buttonMsg).equals(buttonMsg);
+        String buttonMsg1 = stringList.get("buyPropertyMsg");
+        String buttonMsg2 = stringList.get("buildOnPropertyMsg");
+        gui.getUserButtonPressed(screenMsg, buttonMsg, buttonMsg1, buttonMsg2 );
 
-        return EndOfTurn;
     }
 
 }

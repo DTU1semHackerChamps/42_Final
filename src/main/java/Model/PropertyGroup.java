@@ -18,14 +18,14 @@ public class PropertyGroup {
         PropertyGroup [] tileGroups = new PropertyGroup[8];
 
 
-        tileGroups[0]=new PropertyGroup(1,3,0);
-        tileGroups[1]=new PropertyGroup(6,8,9);
-        tileGroups[2]=new PropertyGroup(11,13,14);
-        tileGroups[3]=new PropertyGroup(16,18,19);
-        tileGroups[4]=new PropertyGroup(21,23,24);
-        tileGroups[5]=new PropertyGroup(26,27,29);
-        tileGroups[6]=new PropertyGroup(31,32,34);
-        tileGroups[7]=new PropertyGroup(37,39,0);
+        tileGroups[0] = new PropertyGroup(1,3,0);
+        tileGroups[1] = new PropertyGroup(6,8,9);
+        tileGroups[2] = new PropertyGroup(11,13,14);
+        tileGroups[3] = new PropertyGroup(16,18,19);
+        tileGroups[4] = new PropertyGroup(21,23,24);
+        tileGroups[5] = new PropertyGroup(26,27,29);
+        tileGroups[6] = new PropertyGroup(31,32,34);
+        tileGroups[7] = new PropertyGroup(37,39,0);
 
         return tileGroups;
     }

@@ -86,3 +86,11 @@ writeNameMsg
 Skriv navn på spiller
 endTurnMsg
 Afslut tur
+chooseBuildingProperty
+Vælg en grund du vil bygge hus eller hotel på.
+playerTurnChoise
+Vælg hvad du vil gøre i din tur
+buyPropertyMsg
+Køb Grund
+buildOnPropertyMsg
+Byg på en grund
