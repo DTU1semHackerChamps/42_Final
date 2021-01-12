@@ -28,6 +28,7 @@ public class GameController {
 
         PropertyGroup[] propertyGroup = PropertyGroup.tileGroups();
         TileOwners owner = new TileOwners();
+        players[0].setPlayerNum(1);
 
         System.out.println(PropertyGroup.hasGroup(owner,players[0],34,propertyGroup));
 

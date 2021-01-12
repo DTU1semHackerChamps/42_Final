@@ -43,14 +43,14 @@ public class PropertyGroup {
         return groupNumber;
     }
 
-    public static void main(String[] args) {
-        PropertyGroup[] tester = PropertyGroup.tileGroups();
-
-
-
-        System.out.println(PropertyGroup.groupNumber(tester, 2));
-
-    }
+//    public static void main(String[] args) {
+//        PropertyGroup[] tester = PropertyGroup.tileGroups();
+//
+//
+//
+//        System.out.println(PropertyGroup.groupNumber(tester, 2));
+//
+//    }
 
     public int[] getPropertyGroup(){
         return tileGroup;
@@ -59,9 +59,9 @@ public class PropertyGroup {
     public static boolean hasGroup(TileOwners owner, Player currentPlayer, int tilePosition, PropertyGroup[] tileGroups){
         boolean hasGroup = true;
         int numOfPlayer = currentPlayer.getPlayerNum();
-        int tileGroupnumber = PropertyGroup.groupNumber(tileGroups,tilePosition);
-        for (int i = 0; i < tileGroups[tileGroupnumber].getPropertyGroup().length; i++) {
-            if(owner.getTileOwner(tileGroups[tileGroupnumber].getPropertyGroup()[i]) != numOfPlayer){
+        int tileGroupNumber = PropertyGroup.groupNumber(tileGroups,tilePosition);
+        for (int i = 0; i < tileGroups[tileGroupNumber].getPropertyGroup().length; i++) {
+            if(owner.getTileOwner(tileGroups[tileGroupNumber].getPropertyGroup()[i]) != numOfPlayer){
                 hasGroup = false;
             }
         }
