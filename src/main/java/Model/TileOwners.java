@@ -46,4 +46,15 @@ public class TileOwners {
         tileOwners[position][3] = hotel;
     }
 
+    public void addTileHouses(int position){
+        if (tileOwners[position][3] == 0) {
+            if (tileOwners[position][2] < 4) {
+                tileOwners[position][2] += 1;
+            } else {
+                tileOwners[position][3] += 1;
+            }
+        }
+
+    }
+
 }
