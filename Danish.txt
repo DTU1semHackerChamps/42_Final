@@ -84,3 +84,5 @@ ChoosePlayers
 Vælg antallet af spillere.
 writeNameMsg
 Skriv navn på spiller
+endTurnMsg
+Afslut tur
