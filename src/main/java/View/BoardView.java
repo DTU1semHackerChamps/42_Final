@@ -21,8 +21,7 @@ public class BoardView {
      *
      * @param stringList is the names of the tiles taken form a list of strings in the Language class.
      * @param fields     is the current GUI_Field[]
-     * @return Returns gui with monopoly_junior.Tile names, monopoly_junior.Tile balance
-     * and specific colors for the tiles and background
+     * @return Returns gui with colors, names of the tiles and their prices.
      */
     public static GUI initBoard(HashMap<String, String> stringList, GUI_Field[] fields, GUIBoardData[] boardData, BuildableTilePrices[] propertyPrice, CompanyTilePrices[] priceOfCompany) {
 
@@ -31,7 +30,6 @@ public class BoardView {
         int tileCompany = 0;
         String tileName;
         float H, S, B;
-
 
         for (int i = 0; i < boardData.length; i++) {
 
@@ -78,6 +76,12 @@ public class BoardView {
             guiPlayer[i].setBalance(players[i].getBalance());
         }
 
+    }
+    public static boolean getEndOfTurn(GUI gui, HashMap<String, String> stringList){
+        String buttonMsg = stringList.get("endTurnMsg");
+        boolean EndOfTurn = gui.getUserButtonPressed("",buttonMsg).equals(buttonMsg);
+
+        return EndOfTurn;
     }
 
 }

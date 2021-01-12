@@ -2,9 +2,11 @@ package Controller;
 
 import Model.*;
 import View.BoardView;
+import View.BuildingsView;
 import View.PlayerView;
 import gui_fields.GUI_Field;
 import gui_fields.GUI_Player;
+import gui_fields.GUI_Street;
 import gui_main.GUI;
 
 import java.io.IOException;
@@ -15,9 +17,7 @@ public class GameController {
     public static void main(String[] args) throws IOException {
         // loads the file of the corresponding language input string
         HashMap<String, String> stringList = Language.languageInit("Danish");
-
-        GUI_Field[] fields = new GUI_Field[40];
-
+        GUI_Street[] fields = new GUI_Street[40];
 
         GUI gui = BoardView.initBoard(stringList, fields, GUIBoardData.tilesData(stringList), BuildableTilePrices.tilesData(), CompanyTilePrices.companyData());
 
@@ -32,11 +32,16 @@ public class GameController {
 
         System.out.println(PropertyGroup.hasGroup(owner,players[0],34,propertyGroup));
 
-        players[0].setPosition(5);
-        PlayerView.updatePosition(fields,gui_players,players);
-        players[1].addBalance(-5000);
-        PlayerView.updateBalances(gui_players,players);
-
+        // test af stuff fra linje 29- 37
+        while (true) {
+            players[0].setPosition(5);
+            PlayerView.updatePosition(fields, gui_players, players);
+            players[1].addBalance(-5000);
+            PlayerView.updateBalances(gui_players, players);
+            int position = BuildingsView.buildingAvailability(GUIBoardData.tilesData(stringList),gui);
+            System.out.println(position);
+            BoardView.getEndOfTurn(gui, stringList);
+        }
     }
 
 }
