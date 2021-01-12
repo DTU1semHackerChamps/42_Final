@@ -1,5 +1,7 @@
 package Model.Tiles;
 
+import Model.Player;
+
 public class TaxTile extends Tile{
 
 
