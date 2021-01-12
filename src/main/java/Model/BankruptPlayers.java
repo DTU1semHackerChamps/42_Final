@@ -18,6 +18,10 @@ public class BankruptPlayers {
         bankruptPlayers[numOfPlayer] = isBankrupt;
     }
 
+    public boolean [] getBankruptPlayers(){
+        return bankruptPlayers;
+    }
+
     public void updateBankruptPlayers(Player[] players){
         for (int i = 0; i < players.length; i++) {
             if (players[i].getBalance() <= 0){

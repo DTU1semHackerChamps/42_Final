@@ -1,22 +1,19 @@
 package Model;
 
-import Model.BuildableTilePrices;
-import Model.CompanyTilePrices;
-import Model.GUIBoardData;
-import Model.Player;
-import gui_fields.GUI_Field;
-import gui_fields.GUI_Player;
-import gui_fields.GUI_Street;
-import gui_main.GUI;
-
-import java.awt.*;
-import java.util.HashMap;
-
 public class GameEvents
 {
+    public static int whoWon(BankruptPlayers bankruptPlayers, PlayerNames names) {
+        int allPlayers = bankruptPlayers.getBankruptPlayers().length;
+        int winningPlayerNum = -1;
 
-    public static boolean whoWon(Player[] players, boolean [] bankruptPlayers) {
+        if(bankruptPlayers.numOfBankruptPlayers() == allPlayers - 1){
+            for (int i = 0; i < allPlayers; i++) {
+                if(bankruptPlayers.getBankruptPlayers()[i]){
+                    winningPlayerNum = i;
 
-
+                }
+            }
+        }
+        return winningPlayerNum;
     }
 }
