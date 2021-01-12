@@ -25,10 +25,16 @@ public class BuildingsView {
 
     }
 
+    /**
+     * Dropdown menu with all available street names for the current player, to select the location for building houses or a hotel.
+     * All streetnames are assigned to a String array, and there after the position of the streetname is found.
+     * @param boardData
+     * @param gui
+     * @return int value of the property position on the game board.
+     */
     public static int buildingAvailability(GUIBoardData[] boardData, GUI gui){
         int propertyPosition = 0;
         String[] streetNames = new String[boardData.length];
-        String tempNames = "";
         for (int i = 0; i < boardData.length; i++) {
             streetNames[i] = boardData[i].getStreetName();
         }
