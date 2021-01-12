@@ -25,11 +25,15 @@ public class GameController {
         Player[] players = Player.playerList(PlayerView.getNumberOfPlayers(gui, stringList));
 
         GUI_Player[] gui_players = PlayerView.displayAddPlayer(stringList, gui, fields, players);
-        players[0].setPosition(5);
-        PlayerView.updatePosition(fields,gui_players,players);
-        players[1].addBalance(-5000);
-        PlayerView.updateBalances(gui_players,players);
+        // test af stuff fra linje 29- 36
+        while (true) {
+            players[0].setPosition(5);
+            PlayerView.updatePosition(fields, gui_players, players);
+            players[1].addBalance(-5000);
+            PlayerView.updateBalances(gui_players, players);
 
+            BoardView.getEndOfTurn(gui, stringList);
+        }
     }
 
 }

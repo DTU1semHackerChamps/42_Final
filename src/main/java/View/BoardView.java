@@ -71,5 +71,11 @@ public class BoardView {
 
     }
 
+    public static boolean getEndOfTurn(GUI gui, HashMap<String, String> stringList){
+        String buttonMsg = stringList.get("endTurnMsg");
+        boolean EndOfTurn = gui.getUserButtonPressed("",buttonMsg).equals(buttonMsg);
+
+        return EndOfTurn;
+    }
 
 }
