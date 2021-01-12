@@ -16,18 +16,6 @@ public class GameEvents
 {
 
     public static boolean whoWon(Player[] players, boolean [] bankruptPlayers) {
-        int highBalance = 0;
-        int highBalance2 = 0;
-        int winner = 0;
-
-        for (int i = 0; i < players.length; i++)
-        {
-            int currentBalance = players[i].getBalance();
-            if (currentBalance <= 0)
-            {
-                bankruptPlayers[i] = true;
-            }
-        }
 
 
     }
