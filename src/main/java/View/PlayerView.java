@@ -14,8 +14,9 @@ import java.util.concurrent.TimeUnit;
 
 public class PlayerView {
     /**
-     * This method is used to add a GUI_Player to the GUI and it also initializes and returns that GUI_Player
-     * @param stringList is the names of the characters taken form a list of strings
+     * This method is used to add a GUI_Player to the GUI and it also initializes and returns that GUI_Player.
+     * Each player hase a designated color.
+     * @param stringList is the message for character creation
      * @param gui The current GUI
      * @param fields The current GUI_Field[]
      * @param player The name displayed in the GUI by the score
@@ -50,13 +51,13 @@ public class PlayerView {
     }
 
     /**
-     * The method is responsible to display a message and waits for participants to response.
-     * @param gui
-     * @param stringList
-     * @return returns a int value as the participants responded.
+     * Creates 5 buttons on the GUI to select the number of players.
+     * @param gui The current GUI
+     * @param stringList is the message for choosing the playernumber
+     * @return An integer value of the number of players
      */
     public static int getNumberOfPlayers(GUI gui, HashMap<String, String> stringList){
-        int numberOfPlayers = Integer.parseInt(gui.getUserButtonPressed(stringList.get("ChooseCharacter1"), "2", "3", "4", "5", "6"),10);;
+        int numberOfPlayers = Integer.parseInt(gui.getUserButtonPressed(stringList.get("ChoosePlayers"), "2", "3", "4", "5", "6"),10);;
 
         return numberOfPlayers;
     }
@@ -92,7 +93,6 @@ public class PlayerView {
      * @param dice2 face-value2
      */
     public static void displayDice(GUI gui,int dice1, int dice2){
-        //gui.setDice(dice1,dice2);
         gui.setDice(dice1,5,1,dice2,6,1);
 
     }

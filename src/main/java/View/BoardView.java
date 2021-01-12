@@ -21,8 +21,7 @@ public class BoardView {
      *
      * @param stringList is the names of the tiles taken form a list of strings in the Language class.
      * @param fields     is the current GUI_Field[]
-     * @return Returns gui with monopoly_junior.Tile names, monopoly_junior.Tile balance
-     * and specific colors for the tiles and background
+     * @return Returns gui with colors, names of the tiles and their prices.
      */
     public static GUI initBoard(HashMap<String, String> stringList, GUI_Field[] fields, GUIBoardData[] boardData, BuildableTilePrices[] propertyPrice, CompanyTilePrices[] priceOfCompany) {
 
@@ -31,20 +30,6 @@ public class BoardView {
         int tileCompany = 0;
         String tileName;
         float H, S, B;
-
-        /* HSB colors
-        BoardBackground H:0.35f S:0.19f B:0.87f
-        0 : White H = 0.5f; S = 0f; B = 0.98f;
-        1 : Brown H = 0.05f; S = 0.64f; B = 0.58f;
-        2 : LightBlue H = 0.56f; S = 0.27f; B = 0.96f;
-        3 : Magenta H = 0.91f; S = 0.67f; B = 0.83f;
-        4 : Orange H = 0.09f; S = 0.87f; B = 0.97f;
-        5 : Red H = 1.00f; S = 0.85f; B = 0.94f;
-        6 : Yellow H = 0.15f; S = 0.83f; B = 0.98f;
-        7 : Green H = 0.37f; S = 0.76f; B = 0.66f;
-        8 : Blue H = 0.57f; S = 0.92f; B = 0.72f;
-
-         */
 
         for (int i = 0; i < boardData.length; i++) {
 
@@ -86,11 +71,5 @@ public class BoardView {
 
     }
 
-    public static void  updatePlayerBalance(GUI gui, GUI_Player[] guiPlayer, Player[] players){
-        for (int i = 0; i < players.length; i++) {
-            guiPlayer[i].setBalance(players[i].getBalance());
-        }
-
-    }
 
 }
