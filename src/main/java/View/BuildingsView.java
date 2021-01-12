@@ -1,8 +1,10 @@
 package View;
 
+import Model.GUIBoardData;
 import Model.TileOwners;
 import gui_fields.GUI_Field;
 import gui_fields.GUI_Street;
+import gui_main.GUI;
 
 public class BuildingsView {
 
@@ -21,5 +23,26 @@ public class BuildingsView {
             }
         }
 
+    }
+
+    public static int buildingAvailability(GUIBoardData[] boardData, GUI gui){
+        int propertyPosition = 0;
+        String[] streetNames = new String[boardData.length];
+        String tempNames = "";
+        for (int i = 0; i < boardData.length; i++) {
+            streetNames[i] = boardData[i].getStreetName();
+        }
+
+        String propertyName = gui.getUserSelection("vælg grund", streetNames);
+
+
+        for (int i = 0; i < boardData.length; i++) {
+            if(propertyName == boardData[i].getStreetName()){
+                propertyPosition = i;
+                break;
+            }
+
+        }
+        return propertyPosition;
     }
 }
