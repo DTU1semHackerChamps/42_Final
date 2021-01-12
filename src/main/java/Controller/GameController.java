@@ -25,6 +25,12 @@ public class GameController {
         Player[] players = Player.playerList(PlayerView.getNumberOfPlayers(gui, stringList));
 
         GUI_Player[] gui_players = PlayerView.displayAddPlayer(stringList, gui, fields, players);
+
+        PropertyGroup[] propertyGroup = PropertyGroup.tileGroups();
+        TileOwners owner = new TileOwners();
+
+        System.out.println(PropertyGroup.hasGroup(owner,players[0],34,propertyGroup));
+
         players[0].setPosition(5);
         PlayerView.updatePosition(fields,gui_players,players);
         players[1].addBalance(-5000);
