@@ -50,7 +50,8 @@ public class GameController {
             PlayerView.displayDice(gui,dice1.getFaceValue(),dice2.getFaceValue());
             PlayerView.updateBalances(gui_players,players);
             PlayerView.updatePosition(fields, gui_players, players);
-
+                owners.setTileOwner(1,1);
+                owners.setTileOwner(3,1);
             while(true){
                 menuString = BoardView.playerTurnMenu(gui,stringList);
                 if(menuString.equals(stringList.get("buyPropertyMsg"))){
@@ -70,7 +71,10 @@ public class GameController {
                 }
 
             }
-            if(GameEvents.hasWon(players, bankruptPlayers, gui)){
+            System.out.println(owners.getTileHouses(1));
+            BuildingsView.updateBuildings(fields,owners);
+            bankruptPlayers.updateBankruptPlayers(players);
+            if(GameEvents.hasWon(bankruptPlayers, gui)){
                 System.exit(0);
             }
 

@@ -19,7 +19,7 @@ public class GameEvents
         return winningPlayerNum;
     }
 
-    public static boolean hasWon(Player[] players, BankruptPlayers bankruptPlayers, GUI gui){
+    public static boolean hasWon(BankruptPlayers bankruptPlayers, GUI gui){
         boolean endGame = false;
         int i = whoWon(bankruptPlayers);
         if(i != -1) {

@@ -17,8 +17,11 @@ public class BuildingsView {
      * @param owners
      */
     public static void updateBuildings(GUI_Street[] streets, TileOwners owners){
+        int j =0;
         for (int i = 0; i < streets.length; i++) {
-            streets[i].setHouses(owners.getTileHouses(i));
+            j =owners.getTileHouses(i);
+            streets[i].setHouses(1);
+            System.out.println(j);
             if (owners.getTileHotel(i) == 1){
                 streets[i].setHotel(true);
             } else {
