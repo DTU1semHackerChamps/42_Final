@@ -7,9 +7,9 @@ public class FerryTile extends OwnableTile {
 
     private int faceValue;
 
-    public FerryTile(Player currentPlayer, Player[] players, TileOwners owners, int faceValue) {
+    public FerryTile(Player currentPlayer, Player[] players, TileOwners owners) {
         super(currentPlayer, players, owners);
-        this.faceValue = faceValue;
+
     }
 
     @Override

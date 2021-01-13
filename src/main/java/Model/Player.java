@@ -71,7 +71,7 @@ public class Player {
      * @param faceValue Sum of the dice
      */
     public void addPosition(int faceValue){
-        position = faceValue;
+        position += faceValue;
 
         if(position > 39){
             position -= 40;
@@ -90,10 +90,29 @@ public class Player {
         Player[] players = new Player[numOfPlayers];
 
         for(int i = 0; i < numOfPlayers; i++){
-            players[i] = new Player(30000, 0,false, i );
+            players[i] = new Player(30000, 0,false, i+1 );
         }
 
         return players;
     }
+
+    public static int nextPlayer(int index, Player[] players){
+        index = ++index % players.length;
+        return index;
+    }
+
+    public static int switchPlayer(int index, Player[] players, PlayerBlacklist blacklist){
+        int playerNum = 0;
+        while(true) {
+            playerNum = Player.nextPlayer(index, players);
+            if(!blacklist.getBlacklist()[playerNum]){
+                break;
+            }
+        }
+        return playerNum;
+    }
+
+
+
 }
 

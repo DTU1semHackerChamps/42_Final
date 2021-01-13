@@ -7,7 +7,7 @@ import Model.TileOwners;
 
 public class BuyHouse {
 
-    public boolean buildHouse(BuildableTilePrices[] data, Player currentPlayer, int position, TileOwners tileOwners) {
+    public static boolean buildHouse(BuildableTilePrices[] data, Player currentPlayer, int position, TileOwners tileOwners) {
         boolean builtHouse = false;
         int priceOfHouse = data[position].getPriceOfHouse();
 
@@ -15,6 +15,10 @@ public class BuyHouse {
             tileOwners.addTileHouses(position);
             currentPlayer.addBalance(-priceOfHouse);
             builtHouse = true;
+        }
+
+        if(position == 0){
+            builtHouse = false;
         }
 
         return builtHouse;

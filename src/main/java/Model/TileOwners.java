@@ -6,6 +6,9 @@ public class TileOwners {
 
     public TileOwners () {
         tileOwners = new int[40][3];
+        for (int i = 0; i < tileOwners.length; i++) {
+            tileOwners[i][0] = -1;
+        }
     }
 
     public int[][] getTileOwners() {
@@ -47,11 +50,11 @@ public class TileOwners {
     }
 
     public void addTileHouses(int position){
-        if (tileOwners[position][3] == 0) {
-            if (tileOwners[position][2] < 4) {
-                tileOwners[position][2] += 1;
+        if (tileOwners[position][2] == 0) {
+            if (tileOwners[position][1] < 4) {
+                tileOwners[position][1] += 1;
             } else {
-                tileOwners[position][3] += 1;
+                tileOwners[position][2] += 1;
             }
         }
 

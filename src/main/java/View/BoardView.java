@@ -71,13 +71,14 @@ public class BoardView {
 
     }
 
-    public static void playerTurnMenu(GUI gui, HashMap<String, String> stringList){
+    public static String playerTurnMenu(GUI gui, HashMap<String, String> stringList){
+        String buttonPress;
         String screenMsg = stringList.get("playerTurnChoise");
         String buttonMsg = stringList.get("endTurnMsg");
         String buttonMsg1 = stringList.get("buyPropertyMsg");
         String buttonMsg2 = stringList.get("buildOnPropertyMsg");
-        gui.getUserButtonPressed(screenMsg, buttonMsg, buttonMsg1, buttonMsg2 );
-
+        buttonPress = gui.getUserButtonPressed(screenMsg, buttonMsg, buttonMsg1, buttonMsg2 );
+        return buttonPress;
     }
 
     public static void buyPropertyView(boolean isBought, GUI gui, HashMap<String,String> stringList){
