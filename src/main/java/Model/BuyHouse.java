@@ -1,11 +1,11 @@
-package Model.TilesData.Buy_property;
+package Model;
 
 
 import Model.BuildableTilePrices;
 import Model.Player;
 import Model.TileOwners;
 
-public class buyProperty {
+public class BuyHouse {
 
     public boolean buildHouse(BuildableTilePrices[] data, Player currentPlayer, int position, TileOwners tileOwners) {
         boolean builtHouse = false;
@@ -19,9 +19,4 @@ public class buyProperty {
 
         return builtHouse;
     }
-
-
-
-
-
 }

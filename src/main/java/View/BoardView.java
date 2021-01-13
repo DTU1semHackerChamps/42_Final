@@ -80,4 +80,20 @@ public class BoardView {
 
     }
 
+    public static void buyPropertyView(boolean isBought, GUI gui, HashMap<String,String> stringList){
+        if(isBought){
+            gui.showMessage(stringList.get("boughtPropertyMsg"));
+        } else {
+            gui.showMessage(stringList.get("notBoughtPropertyMsg"));
+        }
+    }
+
+    public static void buyHouseView(boolean isBought, GUI gui, HashMap<String,String> stringList){
+        if(isBought){
+            gui.showMessage(stringList.get("boughtHouseMsg"));
+        } else {
+            gui.showMessage(stringList.get("notBoughtHouseMsg"));
+        }
+    }
+
 }
