@@ -14,14 +14,11 @@ import java.util.concurrent.TimeUnit;
 
 public class EventsView {
 
-public String displayWinner(GameEvents winningPlayerNum,BankruptPlayers bankruptPlayers,PlayerNames names, GUI gui){
+public static void displayWinner(GameEvents winningPlayerNum,BankruptPlayers bankruptPlayers,PlayerNames names, GUI gui){
 
-    String playerName = Player.getPlayerNum(GameEvents.whoWon(bankruptPlayers ,names));
 //    String playerName = PlayerNames.getPlayerName(GameEvents.whoWon(bankruptPlayers ,names));
-    String displayWinner = gui.showMessage("tillykke " + playerName,);
+    gui.showMessage("tillykke " + "spiller" + GameEvents.whoWon(bankruptPlayers ,names));
 
-
-   return displayWinner;
 }
 
 }
