@@ -1,5 +1,7 @@
 package Model.Tiles;
 
+import Model.Player;
+
 public class FerryTile extends OwnableTile {
 
     private  int faceValue;
