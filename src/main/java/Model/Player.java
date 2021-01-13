@@ -101,11 +101,11 @@ public class Player {
         return index;
     }
 
-    public static int switchPlayer(int index, Player[] players, PlayerBlacklist blacklist){
+    public static int switchPlayer(int index, Player[] players, BankruptPlayers bankruptPlayer){
         int playerNum = 0;
         while(true) {
             playerNum = Player.nextPlayer(index, players);
-            if(!blacklist.getBlacklist()[playerNum]){
+            if(!bankruptPlayer.getBankruptPlayers()[playerNum]){
                 break;
             }
         }

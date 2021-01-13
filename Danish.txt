@@ -102,3 +102,7 @@ boughtHouseMsg
 Du har købt huse/hotellet.
 notBoughtHouseMsg
 Du har ikke købt huset pga. du mangler penge, eller at der er et hotel i forvejen.
+rollButton
+Kast terninger
+rollScreenMessage
+Tryk på knappen for at kaste terningerne.

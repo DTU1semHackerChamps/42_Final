@@ -27,7 +27,7 @@ public class GameController {
         // Currentplayer is used to decide which player is rolling the dice and affected by the balance change, position change and extra turn
         Player[] players = Player.playerList(PlayerView.getNumberOfPlayers(gui, stringList));
         Player currentPlayer = new Player(0,0,false,0);
-        PlayerBlacklist blacklist = new PlayerBlacklist(players);
+        BankruptPlayers bankruptPlayers = new BankruptPlayers(players);
         GUI_Player[] gui_players = PlayerView.displayAddPlayer(stringList, gui, fields, players);
         PropertyGroup[] propertyGroups = PropertyGroup.tileGroups();
         TileOwners owners = new TileOwners();
@@ -38,7 +38,7 @@ public class GameController {
         int position = 0;
         String menuString = "";
         while (true){
-            currentPlayerNum = Player.switchPlayer(currentPlayerNum,players,blacklist);
+            currentPlayerNum = Player.switchPlayer(currentPlayerNum,players,bankruptPlayers);
             currentPlayer = players[currentPlayerNum];
             dice1.rollDice();
             dice2.rollDice();
@@ -46,8 +46,11 @@ public class GameController {
             currentPlayer.addPosition(sumOfDice);
             position = currentPlayer.getPosition();
             tiles[position].executeTile();
+            PlayerView.rollScreen(gui,stringList);
+            PlayerView.displayDice(gui,dice1.getFaceValue(),dice2.getFaceValue());
             PlayerView.updateBalances(gui_players,players);
             PlayerView.updatePosition(fields, gui_players, players);
+
             while(true){
                 menuString = BoardView.playerTurnMenu(gui,stringList);
                 if(menuString.equals(stringList.get("buyPropertyMsg"))){
@@ -66,15 +69,10 @@ public class GameController {
                     break;
                 }
 
-
-
             }
-
-
-
-
-
-
+            if(GameEvents.hasWon(players, bankruptPlayers, gui)){
+                System.exit(0);
+            }
 
 
         }

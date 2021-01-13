@@ -93,7 +93,7 @@ public class PlayerView {
      * @param dice2 face-value2
      */
     public static void displayDice(GUI gui,int dice1, int dice2){
-        gui.setDice(dice1,5,1,dice2,6,1);
+        gui.setDice(dice1,4,3,dice2,6,3);
 
     }
 
@@ -105,8 +105,10 @@ public class PlayerView {
      * @param rollButton name of the button.
      * @return returns a boolean value.
      */
-    public static boolean rollScreen(GUI gui, String rollScreenMessage, String rollButton){
+    public static boolean rollScreen(GUI gui, HashMap<String, String> stringList){
         boolean buttonPress;
+        String rollScreenMessage = stringList.get("rollScreenMessage");
+        String rollButton = stringList.get("rollButton");
         buttonPress = gui.getUserButtonPressed( rollScreenMessage, rollButton).equals(rollButton);
         return buttonPress;
     }
