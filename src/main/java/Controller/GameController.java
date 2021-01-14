@@ -1,12 +1,10 @@
 package Controller;
 
 import Model.*;
-import Model.Tiles.BuildableTile;
 import Model.Tiles.Tile;
 import View.BoardView;
 import View.BuildingsView;
 import View.PlayerView;
-import gui_fields.GUI_Field;
 import gui_fields.GUI_Player;
 import gui_fields.GUI_Street;
 import gui_main.GUI;
@@ -32,7 +30,7 @@ public class GameController {
         PropertyGroup[] propertyGroups = PropertyGroup.tileGroups();
         TileOwners owners = new TileOwners();
         BuildableTilePrices[] prices = BuildableTilePrices.tilesData();
-        Tile[] tiles = TileController.boardTiles(prices,currentPlayer,players,owners,propertyGroups);
+        Tile[] tiles = BoardController.boardTiles(prices,currentPlayer,players,owners,propertyGroups);
         int currentPlayerNum = players.length - 1;
         int sumOfDice;
         int position = 0;
@@ -64,6 +62,7 @@ public class GameController {
                     boolean buildHouse = BuyHouse.buildHouse(prices, currentPlayer, buildingPosition, owners);
                     PlayerView.updateBalances(gui_players,players);
                     BoardView.buyHouseView(buildHouse,gui,stringList);
+                    BuildingsView.updateBuildings(fields,owners);
 
 
                 }else {
@@ -71,8 +70,7 @@ public class GameController {
                 }
 
             }
-            System.out.println(owners.getTileHouses(1));
-            BuildingsView.updateBuildings(fields,owners);
+
             bankruptPlayers.updateBankruptPlayers(players);
             if(GameEvents.hasWon(bankruptPlayers, gui)){
                 System.exit(0);

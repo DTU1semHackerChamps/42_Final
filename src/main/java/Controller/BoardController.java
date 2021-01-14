@@ -6,7 +6,7 @@ import Model.PropertyGroup;
 import Model.TileOwners;
 import Model.Tiles.*;
 
-public class TileController {
+public class BoardController {
 
     public static Tile[] boardTiles(BuildableTilePrices[] prices, Player currentPlayer, Player[] players, TileOwners owners, PropertyGroup[] propertyGroups){
         Tile[] boardTiles = new Tile[40];
