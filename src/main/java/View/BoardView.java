@@ -71,11 +71,30 @@ public class BoardView {
 
     }
 
-    public static boolean getEndOfTurn(GUI gui, HashMap<String, String> stringList){
+    public static String playerTurnMenu(GUI gui, HashMap<String, String> stringList){
+        String buttonPress;
+        String screenMsg = stringList.get("playerTurnChoise");
         String buttonMsg = stringList.get("endTurnMsg");
-        boolean EndOfTurn = gui.getUserButtonPressed("",buttonMsg).equals(buttonMsg);
+        String buttonMsg1 = stringList.get("buyPropertyMsg");
+        String buttonMsg2 = stringList.get("buildOnPropertyMsg");
+        buttonPress = gui.getUserButtonPressed(screenMsg, buttonMsg, buttonMsg1, buttonMsg2 );
+        return buttonPress;
+    }
 
-        return EndOfTurn;
+    public static void buyPropertyView(boolean isBought, GUI gui, HashMap<String,String> stringList){
+        if(isBought){
+            gui.showMessage(stringList.get("boughtPropertyMsg"));
+        } else {
+            gui.showMessage(stringList.get("notBoughtPropertyMsg"));
+        }
+    }
+
+    public static void buyHouseView(boolean isBought, GUI gui, HashMap<String,String> stringList){
+        if(isBought){
+            gui.showMessage(stringList.get("boughtHouseMsg"));
+        } else {
+            gui.showMessage(stringList.get("notBoughtHouseMsg"));
+        }
     }
 
 }
