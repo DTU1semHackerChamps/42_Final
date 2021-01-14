@@ -3,10 +3,7 @@ package Controller;
 import Model.*;
 import Model.Tiles.BuildableTile;
 import Model.Tiles.Tile;
-import View.BoardView;
-import View.BuildingsView;
-import View.PlayerView;
-import View.PropertyOwnerView;
+import View.*;
 import gui_fields.GUI_Field;
 import gui_fields.GUI_Player;
 import gui_fields.GUI_Street;
@@ -76,7 +73,7 @@ public class GameController {
             }
 
             bankruptPlayers.updateBankruptPlayers(players);
-            if(GameEvents.hasWon(bankruptPlayers, gui)){
+            if(EventsView.hasWon(bankruptPlayers, gui)){
                 System.exit(0);
             }
 

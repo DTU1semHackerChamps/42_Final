@@ -19,14 +19,4 @@ public class GameEvents
         return winningPlayerNum;
     }
 
-    public static boolean hasWon(BankruptPlayers bankruptPlayers, GUI gui){
-        boolean endGame = false;
-        int i = whoWon(bankruptPlayers);
-        if(i != -1) {
-            gui.showMessage("Spiller" + i);
-            endGame = true;
-        }
-        return endGame;
-    }
-
 }
