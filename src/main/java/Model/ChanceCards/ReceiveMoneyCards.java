@@ -5,13 +5,15 @@ import Model.Player;
 public class ReceiveMoneyCards extends ChanceCard{
     private int moneyAmount;
 
-    public ReceiveMoneyCards(Player currentPlayer, Player[] players, int moneyAmount) {
-        super(currentPlayer, players);
+    public ReceiveMoneyCards(Player currentPlayer, Player[] players, String msgKeyWord, int moneyAmount) {
+        super(currentPlayer, players, msgKeyWord);
         this.moneyAmount = moneyAmount;
     }
 
     @Override
-    public void useChancecard() {
+    public String useChancecard() {
         currentPlayer.addBalance(moneyAmount);
+
+        return msgKeyWord;
     }
 }
