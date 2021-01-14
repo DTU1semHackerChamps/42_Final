@@ -9,6 +9,9 @@ public class GoToJailTile extends Tile{
         super(currentPlayer, players);
     }
 
+    /**
+     * This method sets the player-position to the prison...
+     */
     @Override
     public void executeTile() {
        currentPlayer.setPosition(10);

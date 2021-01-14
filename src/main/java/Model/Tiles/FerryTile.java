@@ -12,6 +12,9 @@ public class FerryTile extends OwnableTile {
 
     }
 
+    /**
+     * This method take away 4000 from the player balance..
+     */
     @Override
     public void executeTile() {
         currentPlayer.addBalance(-4000);
