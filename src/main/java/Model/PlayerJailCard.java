@@ -5,8 +5,8 @@ import View.PlayerView;
 public class PlayerJailCard {
     static boolean [] hasJailCard;
 
-    public PlayerJailCard(int numOfPlayer){
-        hasJailCard = new boolean[numOfPlayer];
+    public PlayerJailCard(int numOfPlayers){
+        hasJailCard = new boolean[numOfPlayers];
     }
 
     public static void addJailCard (int currentPlayerNum) {
@@ -28,11 +28,7 @@ public class PlayerJailCard {
 //        PlayerJailCard.addJailCard(3);
 //
 //
-//
-//        for (int i = 0; i < 6; i++) {
-//            System.out.println(PlayerJailCard.hasJailCard[i]);
-//
-//        }
+//        System.out.println(PlayerJailCard.hasJailCard[1]);
 //    }
 
 //    public static boolean[] havePlayersJailCards (int numOfPlayer, int playerNumber){
