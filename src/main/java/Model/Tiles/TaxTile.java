@@ -11,6 +11,13 @@ public class TaxTile extends Tile{
 
     @Override
     public void executeTile() {
-        currentPlayer.addBalance(-2000);
+
+        if (currentPlayer.getBalance() < 40000){
+
+            int tenPercentOfBalance = (int) (currentPlayer.getBalance() * 0.1);
+            currentPlayer.addBalance(-tenPercentOfBalance);
+
+        } else currentPlayer.addBalance(-4000);
+
     }
 }

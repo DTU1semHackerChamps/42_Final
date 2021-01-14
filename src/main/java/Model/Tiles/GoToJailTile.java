@@ -12,5 +12,6 @@ public class GoToJailTile extends Tile{
     @Override
     public void executeTile() {
        currentPlayer.setPosition(10);
+       currentPlayer.setIsInJail(true);
     }
 }

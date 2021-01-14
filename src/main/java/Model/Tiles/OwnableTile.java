@@ -12,4 +12,8 @@ public abstract class OwnableTile extends Tile {
         this.owners = owners;
     }
 
+    @Override
+    public void executeTile() {
+
+    }
 }

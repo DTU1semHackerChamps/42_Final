@@ -4,16 +4,16 @@ package Model;
 public class Player {
     private int balance;
     private int position;
-    private boolean jailCard;
+    private boolean isInJail;
     private int playerNum;
 
 
 
-    public Player(int balance, int position, boolean jailCard,int playerNum){
+    public Player(int balance, int position, boolean isInJail,int playerNum){
 
         this.balance = balance;
         this.position = position;
-        this.jailCard = jailCard;
+        this.isInJail = isInJail;
         this.playerNum = playerNum;
 
     }
@@ -45,11 +45,11 @@ public class Player {
 
 
     public boolean isJailCard() {
-        return jailCard;
+        return isInJail;
     }
 
-    public void setJailCard(boolean jailCard) {
-        this.jailCard = jailCard;
+    public void setIsInJail(boolean isInJail) {
+        this.isInJail = isInJail;
     }
 
     public int getPlayerNum() {
