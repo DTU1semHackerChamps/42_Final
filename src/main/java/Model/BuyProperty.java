@@ -1,6 +1,16 @@
 package Model;
 
 public class BuyProperty {
+
+
+    /**
+     * Method for buying the property they are currently standing on if available.
+     * @param currentPlayer
+     * @param owners
+     * @param buildTileData
+     * @param companyTilePrices
+     * @return propertyBought as true
+     */
     public static boolean buyProperty(Player currentPlayer, TileOwners owners, BuildableTilePrices[] buildTileData, CompanyTilePrices[] companyTilePrices){
         boolean propertyBought= false;
         int position = currentPlayer.getPosition();

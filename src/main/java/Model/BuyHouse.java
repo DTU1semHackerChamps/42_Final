@@ -7,6 +7,14 @@ import Model.TileOwners;
 
 public class BuyHouse {
 
+    /**
+     * allows the current player to build a house or hotel on the players owned property's
+     * @param data gets the prices for building a house/hotel on the specific street the player chose
+     * @param currentPlayer
+     * @param position position on the board
+     * @param tileOwners
+     * @return buildHouse as true
+     */
     public static boolean buildHouse(BuildableTilePrices[] data, Player currentPlayer, int position, TileOwners tileOwners) {
         boolean builtHouse = false;
         int priceOfHouse;
