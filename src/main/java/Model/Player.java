@@ -1,22 +1,19 @@
 package Model;
 
-import ChanceCard.JailCard;
 
 public class Player {
     private int balance;
     private int position;
-    private String playerName;
     private boolean jailCard;
     private int playerNum;
 
 
 
-    public Player(int balance, int position, String playerName, boolean jailCard,int playerNum){
+    public Player(int balance, int position, boolean jailCard,int playerNum){
 
         this.balance = balance;
         this.position = position;
         this.jailCard = jailCard;
-        this.playerName = playerName;
         this.playerNum = playerNum;
 
     }
@@ -34,17 +31,18 @@ public class Player {
         return position;
     }
 
-    public void setPosition(int position) {
-        this.position = position;
+    /**
+     * Gives the player 4000kr of passing start.
+     * @param newPosition
+     */
+    public void setPosition(int newPosition) {
+
+        if (position > newPosition) {
+            balance += 4000;
+        }
+        position = newPosition;
     }
 
-    public String getPlayerName() {
-        return playerName;
-    }
-
-    public void setPlayerName(String playerName) {
-        this.playerName = playerName;
-    }
 
     public boolean isJailCard() {
         return jailCard;
@@ -61,5 +59,60 @@ public class Player {
     public void setPlayerNum(int playerNum) {
         this.playerNum = playerNum;
     }
+
+    public void addBalance(int balanceChance){
+        balance += balanceChance;
+
+    }
+
+    /**
+     * Ensures that the position does not exceed the tile array that is playable,
+     * and gives the player 4000 kr for passing start.
+     * @param faceValue Sum of the dice
+     */
+    public void addPosition(int faceValue){
+        position += faceValue;
+
+        if(position > 39){
+            position -= 40;
+            balance += 4000;
+        }
+
+    }
+
+    /**
+     * Creates an array of players with balance pf 30000 kr.
+     * @param numOfPlayers An integer value corresponding with the number of players in the game
+     * @return Player array
+     */
+    public static Player[] playerList(int numOfPlayers){
+
+        Player[] players = new Player[numOfPlayers];
+
+        for(int i = 0; i < numOfPlayers; i++){
+            players[i] = new Player(30000, 0,false, i+1 );
+        }
+
+        return players;
+    }
+
+    public static int nextPlayer(int index, Player[] players){
+        index = ++index % players.length;
+        return index;
+    }
+
+    public static int switchPlayer(int index, Player[] players, BankruptPlayers bankruptPlayer){
+        int playerNum = 0;
+        while(true) {
+            playerNum = Player.nextPlayer(index, players);
+            if(!bankruptPlayer.getBankruptPlayers()[playerNum]){
+                break;
+            }
+        }
+        return playerNum;
+    }
+
+
+
 }
 

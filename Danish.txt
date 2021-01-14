@@ -1,0 +1,108 @@
+tileName0
+Start
+tileName1
+Rødovrevej
+tileName2
+Prøv lykken
+tileName3
+Hvidovrevej
+tileName4
+Betal 2000kr
+tileName5
+Færge 1
+tileName6
+Roskildevej
+tileName7
+Prøv lykken
+tileName8
+Valby Langgade
+tileName9
+Allégade
+tileName10
+Fængsel
+tileName11
+Frederiksberg Allé
+tileName12
+Tuborg
+tileName13
+Bülowsvej
+tileName14
+Gl. Kongevej
+tileName15
+Færge 2
+tileName16
+Bernstorffsvej
+tileName17
+Prøv Lykken
+tileName18
+Hellerupvej
+tileName19
+Strandvejen
+tileName20
+Parkering
+tileName21
+Trianglen
+tileName22
+Prøv Lykken
+tileName23
+Østerbrogade
+tileName24
+Grønningen
+tileName25
+Færge 3
+tileName26
+Bredgade
+tileName27
+Kgs. Nytorv
+tileName28
+Coca Cola
+tileName29
+Østergade
+tileName30
+Gå til fængsel
+tileName31
+Amagertorv
+tileName32
+Vimmelskattet
+tileName33
+Prøv lykken
+tileName34
+Nygade
+tileName35
+Færge 4
+tileName36
+Prøv lykke
+tileName37
+Frederiksberggade
+tileName38
+Betal 2000kr
+tileName39
+Rådhuspladsen
+VisitJailField
+På besøg
+ChoosePlayers
+Vælg antallet af spillere.
+writeNameMsg
+Skriv navn på spiller
+endTurnMsg
+Afslut tur
+chooseBuildingProperty
+Vælg en grund du vil bygge hus eller hotel på.
+playerTurnChoise
+Vælg hvad du vil gøre i din tur
+buyPropertyMsg
+Køb Grund
+buildOnPropertyMsg
+Byg på en grund
+boughtPropertyMsg
+Du har købt grunden.
+notBoughtPropertyMsg
+Du har ikke købt grunden pga. du mangler penge, eller at der er en der ejer den i forvejen.
+boughtHouseMsg
+Du har købt huse/hotellet.
+notBoughtHouseMsg
+Du har ikke købt huset pga. du mangler penge, eller at der er et hotel i forvejen.
+rollButton
+Kast terninger
+rollScreenMessage
+Tryk på knappen for at kaste terningerne.
