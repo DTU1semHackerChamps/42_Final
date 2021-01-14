@@ -2,6 +2,8 @@ package Model;
 
 public class PlayerBlacklist {
 
+    // Delete this class when ready
+
     private boolean[] blacklist;
 
     public PlayerBlacklist(Player[] players){

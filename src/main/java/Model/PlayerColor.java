@@ -15,6 +15,11 @@ public class PlayerColor {
         this.color = color;
     }
 
+
+    /**
+     * array of colors, for each player
+     * @return initPlayerColor
+     */
     public static PlayerColor[] initPlayerColor (){
         PlayerColor[] initPlayerColor = new PlayerColor[7];
 
