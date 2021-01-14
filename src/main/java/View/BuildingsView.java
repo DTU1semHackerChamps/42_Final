@@ -17,15 +17,13 @@ public class BuildingsView {
      * @param owners
      */
     public static void updateBuildings(GUI_Street[] streets, TileOwners owners){
-        int j =0;
         for (int i = 0; i < streets.length; i++) {
-            j =owners.getTileHouses(i);
-            streets[i].setHouses(1);
-            System.out.println(j);
+            streets[i].setHouses(owners.getTileHouses(i));
             if (owners.getTileHotel(i) == 1){
                 streets[i].setHotel(true);
             } else {
                 streets[i].setHotel(false);
+                streets[i].setHouses(owners.getTileHouses(i));
             }
         }
 
@@ -40,7 +38,7 @@ public class BuildingsView {
      */
     public static int buildingAvailability(HashMap<String, String> stringList,GUIBoardData[] boardData, GUI gui, Player currentPlayer, TileOwners owners, PropertyGroup[] propertyGroups){
 
-        int propertyPosition = 0;
+        int propertyPosition = -1;
 
             String[] tempStreetNames = new String[boardData.length];
             int availableTiles = 0;

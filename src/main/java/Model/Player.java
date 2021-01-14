@@ -96,11 +96,24 @@ public class Player {
         return players;
     }
 
+    /**
+     * increment the current player number
+     * @param index
+     * @param players
+     * @return the number of the player
+     */
     public static int nextPlayer(int index, Player[] players){
         index = ++index % players.length;
         return index;
     }
 
+    /**
+     * increment to the next player if current player is bankrupt
+     * @param index
+     * @param players
+     * @param bankruptPlayer
+     * @return the new number of the player
+     */
     public static int switchPlayer(int index, Player[] players, BankruptPlayers bankruptPlayer){
         int playerNum = 0;
         while(true) {

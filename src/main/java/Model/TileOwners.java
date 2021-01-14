@@ -11,7 +11,7 @@ public class TileOwners {
         }
     }
 
-    public int[][] getTileOwners() {
+    private int[][] getTileOwners() {
         return tileOwners;
     }
 
