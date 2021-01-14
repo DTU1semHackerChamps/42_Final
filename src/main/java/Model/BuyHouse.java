@@ -14,7 +14,8 @@ public class BuyHouse {
         if(position != -1){
             priceOfHouse = data[position].getPriceOfHouse();
 
-            if (currentPlayer.getBalance() >= priceOfHouse) {
+            if ((currentPlayer.getBalance() >= priceOfHouse) && (tileOwners.getTileHouses(position) <= 4) && (tileOwners.getTileHotel(position) < 1)) {
+
                 tileOwners.addTileHouses(position);
                 currentPlayer.addBalance(-priceOfHouse);
                 builtHouse = true;
