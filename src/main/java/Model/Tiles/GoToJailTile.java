@@ -1,5 +1,6 @@
 package Model.Tiles;
 
+import Controller.TileController;
 import Model.Player;
 
 public class GoToJailTile extends Tile{
@@ -10,6 +11,6 @@ public class GoToJailTile extends Tile{
 
     @Override
     public void executeTile() {
-
+       currentPlayer.setPosition(10);
     }
 }
