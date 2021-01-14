@@ -32,8 +32,9 @@ public class GameController {
         GUI_Player[] gui_players = PlayerView.displayAddPlayer(stringList, gui, fields, players);
         PropertyGroup[] propertyGroups = PropertyGroup.tileGroups();
         TileOwners owners = new TileOwners();
-        BuildableTilePrices[] prices = BuildableTilePrices.tilesData();
-        Tile[] tiles = TileController.boardTiles(prices,currentPlayer,players,owners,propertyGroups);
+        BuildableTilePrices[] buildTilePrices = BuildableTilePrices.tilesData();
+        CompanyTilePrices[] companyTilePrices = CompanyTilePrices.companyData();
+        Tile[] tiles = BoardController.boardTiles(buildTilePrices,currentPlayer,players,owners,propertyGroups);
         int currentPlayerNum = players.length - 1;
         int sumOfDice;
         int position = 0;
@@ -57,14 +58,15 @@ public class GameController {
                 menuString = BoardView.playerTurnMenu(gui,stringList);
                 if(menuString.equals(stringList.get("buyPropertyMsg"))){
 
-                    BoardView.buyPropertyView(BuyProperty.buyProperty(currentPlayer, owners, prices), gui, stringList);
+                    BoardView.buyPropertyView(BuyProperty.buyProperty(currentPlayer, owners, buildTilePrices, companyTilePrices), gui, stringList);
                     PlayerView.updateBalances(gui_players,players);
 
                 }else if(menuString.equals(stringList.get("buildOnPropertyMsg"))){
                     int buildingPosition = BuildingsView.buildingAvailability(stringList,GUIBoardData.tilesData(stringList), gui, players[currentPlayerNum], owners, propertyGroups);
-                    boolean buildHouse = BuyHouse.buildHouse(prices, currentPlayer, buildingPosition, owners);
+                    boolean buildHouse = BuyHouse.buildHouse(buildTilePrices, currentPlayer, buildingPosition, owners);
                     PlayerView.updateBalances(gui_players,players);
                     BoardView.buyHouseView(buildHouse,gui,stringList);
+                    BuildingsView.updateBuildings(fields,owners);
 
 
                 }else {
@@ -72,8 +74,7 @@ public class GameController {
                 }
                 PropertyOwnerView.updateBorderColor(fields,owners,PlayerColor.initPlayerColor());
             }
-            System.out.println(owners.getTileHouses(1));
-            BuildingsView.updateBuildings(fields,owners);
+
             bankruptPlayers.updateBankruptPlayers(players);
             if(GameEvents.hasWon(bankruptPlayers, gui)){
                 System.exit(0);

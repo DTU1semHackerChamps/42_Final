@@ -9,16 +9,20 @@ public class BuyHouse {
 
     public static boolean buildHouse(BuildableTilePrices[] data, Player currentPlayer, int position, TileOwners tileOwners) {
         boolean builtHouse = false;
-        int priceOfHouse = data[position].getPriceOfHouse();
+        int priceOfHouse;
 
-        if (currentPlayer.getBalance() >= priceOfHouse) {
-            tileOwners.addTileHouses(position);
-            currentPlayer.addBalance(-priceOfHouse);
-            builtHouse = true;
-        }
+        if(position != -1){
+            priceOfHouse = data[position].getPriceOfHouse();
 
-        if(position == 0){
-            builtHouse = false;
+            if (currentPlayer.getBalance() >= priceOfHouse) {
+                tileOwners.addTileHouses(position);
+                currentPlayer.addBalance(-priceOfHouse);
+                builtHouse = true;
+            }
+
+            if(position == 0){
+                builtHouse = false;
+            }
         }
 
         return builtHouse;
