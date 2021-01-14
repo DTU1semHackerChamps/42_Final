@@ -14,7 +14,6 @@ public class FerryTile extends OwnableTile {
 
     @Override
     public void executeTile() {
-
-
+        currentPlayer.addBalance(4000);
     }
 }
