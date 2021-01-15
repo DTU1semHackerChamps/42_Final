@@ -37,17 +37,22 @@ public class ChanceCardController {
         chanceCards[24] = new ReceivePlayerMoneyCards(currentPlayer, players, "chanceCard20Msg", 500);
         chanceCards[25] = new MovePlayerToCards(currentPlayer, players, "chanceCard21Msg", 0);
         chanceCards[26] = new MovePlayerToCards(currentPlayer, players, "chanceCard21Msg", 0);
-        chanceCards[27] = new MovePlayerCards(currentPlayer, players, "chanceCard23Msg", 3);
-        chanceCards[28] = new MovePlayerToCards(currentPlayer, players, "chanceCard24Msg", 11);
-        chanceCards[29] = new MovePlayerToCards(currentPlayer, players, "chanceCard25Msg", 5);
-        chanceCards[30] = new MovePlayerToCards(currentPlayer, players, "chanceCard26Msg", 24);
-        chanceCards[31] = new MovePlayerToCards(currentPlayer, players, "chanceCard27Msg", 32);
-        chanceCards[32] = new MovePlayerToCards(currentPlayer, players, "chanceCard28Msg", 19);
-        chanceCards[33] = new MovePlayerToCards(currentPlayer, players, "chanceCard29Msg", 39);
+        chanceCards[27] = new MovePlayerCards(currentPlayer, players, "chanceCard22Msg", 3);
+        chanceCards[28] = new MovePlayerToCards(currentPlayer, players, "chanceCard23Msg", 11);
+        chanceCards[29] = new MovePlayerToCards(currentPlayer, players, "chanceCard24Msg", 5);
+        chanceCards[30] = new MovePlayerToCards(currentPlayer, players, "chanceCard25Msg", 24);
+        chanceCards[31] = new MovePlayerToCards(currentPlayer, players, "chanceCard26Msg", 32);
+        chanceCards[32] = new MovePlayerToCards(currentPlayer, players, "chanceCard27Msg", 19);
+        chanceCards[33] = new MovePlayerToCards(currentPlayer, players, "chanceCard28Msg", 39);
 
         return chanceCards;
     }
 
+    /**
+     * Shuffles the deck of cards. According to Fisher–Yates shuffle array function.
+     * "https://stackoverflow.com/questions/1519736/random-shuffling-of-an-array" from user Dan Bray.
+     * @param cardList Array of chance cards
+     */
     public static void cardShuffle(ChanceCard[] cardList){
 
         int index;
@@ -64,22 +69,24 @@ public class ChanceCardController {
 
     }
 
-    //Importeret kode fra sidste projekt tjek med Magnus, om det stadig skal bruges.
-    public static int drawCard(int index, ChanceCard[] chanceCards, Player currentPlayer){
-        for (int i = 0; i < chanceCards.length; i++) {
-            chanceCards[i].setCurrentPlayer(currentPlayer);
+    /**
+     * Last chanceCard is placed first in array and the rest of the array is shifted one index up.
+     * @param chanceCards An already initalised array of chanceCards.
+     */
+    public static void shiftDeckOfCards(ChanceCard[] chanceCards){
+
+        int length = chanceCards.length;
+        ChanceCard[] tempChanceCards = chanceCards;
+
+        for(int i = 0; i < length; i++){
+
+            if(i == 0){
+                chanceCards[i] = tempChanceCards[length - 1];
+            }
+
+            if(i < length - 1){
+                chanceCards[i + 1] = tempChanceCards[i];
+            }
         }
-
-        index++;
-
-        chanceCards[index].useChanceCard();
-
-
-        if(index > 33){
-            index = 0;
-        }
-
-        return index;
     }
-
 }
