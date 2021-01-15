@@ -112,3 +112,9 @@ chooseSellableBuildings
 Vælg en grund du vil sælge et hus eller hotel på.
 noSellableBuildings
 Du har ingen grunde der har bygninger.
+noSellableProperties
+Du har ingen grunde der kan sælges.
+chooseSellableProperties
+Vælg en grund du vil sælge til en anden spiller.
+choosePlayers
+Vælg en spiller du vil sælge til.
