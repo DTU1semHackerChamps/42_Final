@@ -1,6 +1,7 @@
 package View;
 
 import Model.Player;
+import Model.PlayerNames;
 import gui_fields.GUI_Car;
 import gui_fields.GUI_Player;
 import gui_main.GUI;
@@ -22,7 +23,7 @@ public class PlayerView {
      * @param player The name displayed in the GUI by the score
      * @return
      */
-    public static GUI_Player[] displayAddPlayer(HashMap<String, String> stringList, GUI gui, GUI_Field[] fields, Player[] player){
+    public static GUI_Player[] displayAddPlayer(HashMap<String, String> stringList, GUI gui, GUI_Field[] fields, Player[] player, PlayerNames names){
         int numOfPlayers = player.length;
         GUI_Player[] guiPlayerList = new GUI_Player[numOfPlayers];
 
@@ -40,6 +41,10 @@ public class PlayerView {
             }
 
             String name = gui.getUserString(stringList.get("writeNameMsg") + " " + (i + 1));
+
+            // Setting the names
+            names.setPlayerName(i, name);
+
             GUI_Player gui_Player = new GUI_Player(name, player[i].getBalance(), carColor);
 
             gui.addPlayer(gui_Player);

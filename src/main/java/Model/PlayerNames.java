@@ -7,8 +7,7 @@ public class PlayerNames {
 
     // Constructor for our PlayerNames class
     public PlayerNames(Player[] players) {
-        this.names = new String[players.length];
-    }
+        this.names = new String[players.length]; }
 
     // Setter method for setting the player name
     public void setPlayerName(int numOfPlayer, String name){
