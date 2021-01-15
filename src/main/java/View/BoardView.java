@@ -86,7 +86,8 @@ public class BoardView {
         String buttonMsg = stringList.get("endTurnMsg");
         String buttonMsg1 = stringList.get("buyPropertyMsg");
         String buttonMsg2 = stringList.get("buildOnPropertyMsg");
-        buttonPress = gui.getUserButtonPressed(screenMsg, buttonMsg, buttonMsg1, buttonMsg2 );
+        String buttonMsg3 = stringList.get("sellOnPropertyMsg");
+        buttonPress = gui.getUserButtonPressed(screenMsg, buttonMsg, buttonMsg1, buttonMsg2, buttonMsg3 );
         return buttonPress;
     }
 

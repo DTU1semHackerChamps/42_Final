@@ -106,3 +106,9 @@ rollButton
 Kast terninger
 rollScreenMessage
 Tryk på knappen for at kaste terningerne.
+sellOnPropertyMsg
+Sælg bygninger
+chooseSellableBuildings
+Vælg en grund du vil sælge et hus eller hotel på.
+noSellableBuildings
+Du har ingen grunde der har bygninger.

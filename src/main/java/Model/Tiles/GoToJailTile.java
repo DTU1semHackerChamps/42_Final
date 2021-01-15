@@ -1,6 +1,6 @@
 package Model.Tiles;
 
-import Controller.TileController;
+import Controller.BoardController;
 import Model.Player;
 
 public class GoToJailTile extends Tile{
