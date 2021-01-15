@@ -86,3 +86,43 @@ writeNameMsg
 Skriv navn på spiller
 endTurnMsg
 Afslut tur
+chooseBuildingProperty
+Vælg en grund du vil bygge hus eller hotel på.
+playerTurnChoise
+Vælg hvad du vil gøre i din tur
+buyPropertyMsg
+Køb Grund
+buildOnPropertyMsg
+Byg på en grund
+boughtPropertyMsg
+Du har købt grunden.
+notBoughtPropertyMsg
+Du har ikke købt grunden pga. du mangler penge, eller at der er en der ejer den i forvejen.
+boughtHouseMsg
+Du har købt huse/hotellet.
+notBoughtHouseMsg
+Du har ikke købt huset pga. du mangler penge, eller at der er et hotel i forvejen.
+rollButton
+Kast terninger
+rollScreenMessage
+Tryk på knappen for at kaste terningerne.
+chooseBuildingProperty
+Vælg en grund du vil bygge hus eller hotel på.
+playerTurnChoise
+Vælg hvad du vil gøre i din tur
+buyPropertyMsg
+Køb Grund
+buildOnPropertyMsg
+Byg på en grund
+boughtPropertyMsg
+Du har købt grunden.
+notBoughtPropertyMsg
+Du har ikke købt grunden pga. du mangler penge, eller at der er en der ejer den i forvejen.
+boughtHouseMsg
+Du har købt huse/hotellet.
+notBoughtHouseMsg
+Du har ikke købt huset pga. du mangler penge, eller at der er et hotel i forvejen.
+rollButton
+Kast terninger
+rollScreenMessage
+Tryk på knappen for at kaste terningerne.
