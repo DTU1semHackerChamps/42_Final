@@ -76,8 +76,16 @@ public class GameController {
             PlayerView.updateBalances(gui_players,players);
             // Moves the currentPlayer on the board GUI
             PlayerView.updatePosition(fields, gui_players, players);
+
+            // ONLY FOR TESTING DELETE WHEN PROJECT IS DONE!!!!
+            //****************************************************
+            //****************************************************
                 owners.setTileOwner(1,1);
                 owners.setTileOwner(3,1);
+            //****************************************************
+            //****************************************************
+
+
             while(true){
                 // Shows a menu with buttons that dictates the choices a player can make in a turn.
                 menuString = BoardView.playerTurnMenu(gui,stringList);

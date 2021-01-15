@@ -11,7 +11,7 @@ public class ReceivePlayerMoneyCards extends ChanceCard{
     }
 
     @Override
-    public String useChancecard() {
+    public String useChanceCard() {
         int totalPlayersGiving = 0;
         for (int i = 0; i < players.length; i++) {
             if(currentPlayer.getPlayerNum() != i){

@@ -11,7 +11,7 @@ public class MovePlayerToCards extends ChanceCard{
     }
 
     @Override
-    public String useChancecard() {
+    public String useChanceCard() {
         currentPlayer.setPosition(specificTile);
 
         return msgKeyWord;
