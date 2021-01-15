@@ -26,4 +26,7 @@ public class EventsView {
         return endGame;
     }
 
+    public static void chanceCardMsg(String chanceCardKeyWord, GUI gui,HashMap<String,String> stringList){
+        gui.showMessage(stringList.get(chanceCardKeyWord));
+    }
 }

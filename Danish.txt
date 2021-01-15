@@ -106,6 +106,62 @@ rollButton
 Kast terninger
 rollScreenMessage
 Tryk på knappen for at kaste terningerne.
+chanceCard1Msg
+De har kørt frem for “fuldt stop”, Betal 1000 kroner i bøde
+chanceCard2Msg
+Betal for vognvask og smøring kr 300
+chanceCard3Msg
+Betal kr 200 for levering af 2 kasser øl
+chanceCard4Msg
+Betal 3000 for reparation af deres vogn
+chanceCard5Msg
+De har købt 4 nye dæk til Deres vogn, betal kr 1000
+chanceCard6Msg
+De har fået en parkeringsbøde, betal kr 200 i bøde
+chanceCard7Msg
+Betal deres bilforsikring, kr 1000
+chanceCard8Msg
+De har været udenlands og købt for mange smøger, betal kr 200 i told.
+chanceCard9Msg
+Tandlægeregning, betal kr 2000.
+chanceCard10Msg
+De har vundet i klasselotteriet. Modtag 500 kr.
+chanceCard11Msg
+De modtager Deres aktieudbytte. Modtag kr 1000 af banken
+chanceCard12Msg
+Kommunen har eftergivet et kvartals skat. Hæv i banken 3000 kr.
+chanceCard13Msg
+De have en række med elleve rigtige i tipning, modtag kl 1000
+chanceCard14Msg
+Grundet dyrtiden har De fået gageforhøjelse, modtag kr 1000.
+chanceCard15Msg
+Deres præmieobligation er udtrykket. De modtager 1000 kr af banken.
+chanceCard16Msg
+De har solg nogle gamle møbler på auktion. Modtag 1000 kr af banken.
+chanceCard17Msg
+Værdien af egen avl fra nyttehaven udgør 200 som de modtager af banken
+chanceCard18Msg
+Det er deres fødselsdag. Modtag af hver medspiller 200 kr.
+chanceCard19Msg
+De har lagt penge ud til et sammenskudsgilde. Mærkværdigvis betaler alle straks. Modtag fra hver medspiller 500 kr.
+chanceCard20Msg
+De skal holde familiefest og får et tilskud fra hver medspiller på 500 kr.
+chanceCard21Msg
+Ryk frem til START
+chanceCard22Msg
+Ryk tre felter frem
+chanceCard23Msg
+Ryk frem til Frederiksberg Allé. Hvis De passere START, indkasser da 4000 kr.
+chanceCard24Msg
+Tag med Mols-Linien, flyt brikken frem og hvis De passerer START indkassér da kr 4000.
+chanceCard25Msg
+Ryk frem til Grønningen, hvis De passerer start indkasser da kr 4000
+chanceCard26Msg
+Ryk frem til Vimmelskaftet, hvis de passerer start indkasser da kr 4000
+chanceCard27Msg
+Ryk frem til Strandvejen. Hvis De passere START, indkasser da 4000 kr.
+chanceCard28Msg
+Tag til Rådhuspladsen
 sellOnPropertyMsg
 Sælg bygninger
 chooseSellableBuildings

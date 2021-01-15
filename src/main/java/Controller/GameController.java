@@ -1,6 +1,7 @@
 package Controller;
 
 import Model.*;
+import Model.ChanceCards.ChanceCard;
 import Model.Tiles.BuildableTile;
 import Model.Tiles.Tile;
 import View.*;
@@ -38,8 +39,10 @@ public class GameController {
         // Different prices for each purchasable property
         BuildableTilePrices[] buildTilePrices = BuildableTilePrices.tilesData();
         CompanyTilePrices[] companyTilePrices = CompanyTilePrices.companyData();
+        ChanceCard[] cardList = ChanceCardController.cardArrayInit(players,currentPlayer);
+        ChanceCardController.cardShuffle(cardList);
         // Loads the effects that tiles do automatically.
-        Tile[] tileEffects = BoardController.boardTiles(buildTilePrices,currentPlayer,players,owners,propertyGroups);
+        Tile[] tileEffects = BoardController.boardTiles(buildTilePrices,currentPlayer,players,owners,propertyGroups, cardList);
         // Loads the dice objects
         Dice dice1 = new Dice(0);
         Dice dice2 = new Dice(0);

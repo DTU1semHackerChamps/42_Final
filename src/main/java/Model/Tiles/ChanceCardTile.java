@@ -1,15 +1,33 @@
 package Model.Tiles;
 
-import Model.Dice;
+import Controller.ChanceCardController;
+import Model.ChanceCards.ChanceCard;
+import Model.GameEvents;
 import Model.Player;
+import View.EventsView;
+import gui_main.GUI;
+
+import java.util.HashMap;
 
 public class ChanceCardTile extends Tile{
-    public ChanceCardTile(Player currentPlayer, Player[] players) {
+
+    ChanceCard[] cardList;
+    GUI gui;
+    HashMap<String,String> stringList;
+
+    public ChanceCardTile(Player currentPlayer, Player[] players, ChanceCard[] cardList,GUI gui, HashMap<String,String> stringList) {
         super(currentPlayer, players);
+        this.cardList = cardList;
+        this.gui = gui;
+        this.stringList = stringList;
+
     }
 
     @Override
     public void executeTile() {
+        String chanceCardKeyword = cardList[0].useChanceCard();
+        ChanceCardController.shiftDeckOfCards(cardList);
+        EventsView.chanceCardMsg(chanceCardKeyword, gui, stringList);
 
 
     }

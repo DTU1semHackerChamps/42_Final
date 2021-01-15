@@ -13,6 +13,7 @@ public class ReceivePlayerMoneyCards extends ChanceCard{
     @Override
     public String useChanceCard() {
         int totalPlayersGiving = 0;
+        int recievingMoneyAmount;
         for (int i = 0; i < players.length; i++) {
             if(currentPlayer.getPlayerNum() != i){
                 players[i].addBalance(-moneyFromPlayers);
@@ -20,7 +21,8 @@ public class ReceivePlayerMoneyCards extends ChanceCard{
             }
 
         }
-        currentPlayer.addBalance(moneyFromPlayers * totalPlayersGiving);
+        recievingMoneyAmount = moneyFromPlayers * totalPlayersGiving;
+        currentPlayer.addBalance(recievingMoneyAmount);
 
         return msgKeyWord;
     }
