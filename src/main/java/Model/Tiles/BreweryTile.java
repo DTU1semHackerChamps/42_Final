@@ -10,6 +10,7 @@ public class BreweryTile extends OwnableTile {
 
     @Override
     public void executeTile() {
+        currentPlayer.addBalance(-3000);
 
     }
 }

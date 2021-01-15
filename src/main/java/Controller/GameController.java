@@ -114,10 +114,16 @@ public class GameController {
                     BuildingsView.updateBuildings(fields,owners);
 
 
-                }else {
+                }else if(menuString.equals(stringList.get("sellOnPropertyMsg"))){
+                    int sellBuildingPosition = PropertyOwnerView.sellHouseView(stringList,GUIBoardData.tilesData(stringList),gui,players[currentPlayerNum],owners,propertyGroups);
+                    SellProperty.sellHouse(buildTilePrices,currentPlayer,sellBuildingPosition,owners);
+                    PlayerView.updateBalances(gui_players,players);
+                    BuildingsView.updateBuildings(fields,owners);
+                }else{
                     // This end the currentPlayers turn
                     break;
                 }
+
                 // Changes the border color of a property to the same color as the player owning it.
                 PropertyOwnerView.updateBorderColor(fields,owners,PlayerColor.initPlayerColor());
             }
