@@ -6,27 +6,30 @@ public class TileOwners {
 
     public TileOwners () {
         tileOwners = new int[40][3];
+        for (int i = 0; i < tileOwners.length; i++) {
+            tileOwners[i][0] = -1;
+        }
     }
 
-    public int[][] getTileOwners() {
+    private int[][] getTileOwners() {
         return tileOwners;
     }
 
     public int getTileOwner(int position) {
         int tileOwner;
-        tileOwner = tileOwners[position][1];
+        tileOwner = tileOwners[position][0];
         return tileOwner;
     }
 
     public int getTileHouses(int position) {
         int houses;
-        houses = tileOwners[position][2];
+        houses = tileOwners[position][1];
         return houses;
     }
 
     public int getTileHotel(int position) {
         int hotel;
-        hotel = tileOwners[position][3];
+        hotel = tileOwners[position][2];
         return hotel;
     }
 
@@ -35,15 +38,26 @@ public class TileOwners {
     }
 
     public void setTileOwner(int position, int owner) {
-        tileOwners[position][1] = owner;
+        tileOwners[position][0] = owner;
     }
 
     public void setTileHouses(int position, int houses){
-        tileOwners[position][2] = houses;
+        tileOwners[position][1] = houses;
     }
 
     public void setTileHotel(int position, int hotel){
-        tileOwners[position][3] = hotel;
+        tileOwners[position][2] = hotel;
+    }
+
+    public void addTileHouses(int position){
+        if (tileOwners[position][2] == 0) {
+            if (tileOwners[position][1] < 4) {
+                tileOwners[position][1] += 1;
+            } else {
+                tileOwners[position][2] += 1;
+            }
+        }
+
     }
 
 }
