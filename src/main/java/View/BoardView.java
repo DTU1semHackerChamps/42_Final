@@ -71,6 +71,15 @@ public class BoardView {
 
     }
 
+    /**
+     * This method displays four buttons with different choices and waits for participants to respond.
+     * The stringList.get method takes the key-word as parameter and gets the phrase that located
+     * underneath the key-word in the txt file.
+     * @param gui the GUI package
+     * @param stringList HashMap, contains a list of phrases .
+     * @return participants input
+     */
+
     public static String playerTurnMenu(GUI gui, HashMap<String, String> stringList){
         String buttonPress;
         String screenMsg = stringList.get("playerTurnChoise");
