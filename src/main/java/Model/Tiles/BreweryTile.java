@@ -4,13 +4,13 @@ import Model.Player;
 import Model.TileOwners;
 
 public class BreweryTile extends OwnableTile {
-    public BreweryTile(Player currentPlayer, Player[] players, TileOwners owners) {
-        super(currentPlayer, players, owners);
+    public BreweryTile(Player[] players, TileOwners owners) {
+        super(players, owners);
     }
 
     @Override
-    public void executeTile() {
-        currentPlayer.addBalance(-3000);
+    public void executeTile(Player currentPlayer) {
+
 
     }
 }

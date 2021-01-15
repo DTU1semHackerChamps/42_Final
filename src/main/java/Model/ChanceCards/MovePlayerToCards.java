@@ -5,14 +5,14 @@ import Model.Player;
 public class MovePlayerToCards extends ChanceCard{
     private int specificTile;
 
-    public MovePlayerToCards(Player currentPlayer, Player[] players, String msgKeyWord, int specificTile) {
-        super(currentPlayer, players, msgKeyWord);
+    public MovePlayerToCards(Player[] players, String msgKeyWord, int specificTile) {
+        super(players, msgKeyWord);
         this.specificTile = specificTile;
     }
 
     @Override
-    public String useChanceCard() {
-        currentPlayer.setPosition(specificTile);
+    public String useChanceCard(Player currentPlayer) {
+        this.currentPlayer.setPosition(specificTile);
 
         return msgKeyWord;
     }

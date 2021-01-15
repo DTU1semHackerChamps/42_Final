@@ -5,14 +5,14 @@ import Model.Player;
 public class MovePlayerCards extends ChanceCard {
     private int moveAmount;
 
-    public MovePlayerCards(Player currentPlayer, Player[] players, String msgKeyWord, int moveAmount) {
-        super(currentPlayer, players, msgKeyWord);
+    public MovePlayerCards(Player[] players, String msgKeyWord, int moveAmount) {
+        super(players, msgKeyWord);
         this.moveAmount = moveAmount;
     }
 
     @Override
-    public String useChanceCard() {
-        currentPlayer.addPosition(moveAmount);
+    public String useChanceCard(Player currentPlayer) {
+        this.currentPlayer.addPosition(moveAmount);
 
         return msgKeyWord;
     }

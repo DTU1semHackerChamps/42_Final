@@ -4,12 +4,12 @@ import Model.Player;
 
 public class JailTile extends Tile{
 
-    public JailTile(Player currentPlayer, Player[] players) {
-        super(currentPlayer, players);
+    public JailTile(Player[] players) {
+        super(players);
     }
 
     @Override
-    public void executeTile() {
+    public void executeTile(Player currentPlayer) {
 
     }
 }

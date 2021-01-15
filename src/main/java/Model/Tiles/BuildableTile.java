@@ -11,15 +11,15 @@ public class BuildableTile extends OwnableTile {
     private TileOwners[] owner;
     private PropertyGroup[] propertyGroups;
 
-    public BuildableTile(Player currentPlayer, Player[] players, TileOwners owners, BuildableTilePrices[] tilesData, PropertyGroup[]  propertyGroups) {
-        super(currentPlayer, players, owners);
+    public BuildableTile(Player[] players, TileOwners owners, BuildableTilePrices[] tilesData, PropertyGroup[]  propertyGroups) {
+        super(players, owners);
         this.tilesData = tilesData;
         this.owners = owners;
         this.propertyGroups = propertyGroups;
     }
 
     @Override
-    public void executeTile() {
+    public void executeTile(Player currentPlayer) {
         int playerPosition = currentPlayer.getPosition();
 
         int rent = 0;

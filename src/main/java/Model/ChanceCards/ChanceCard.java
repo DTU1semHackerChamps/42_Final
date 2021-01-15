@@ -8,12 +8,11 @@ public abstract class ChanceCard {
     protected Player[] players;
     protected String msgKeyWord;
 
-    public ChanceCard(Player currentPlayer, Player[] players, String msgKeyWord){
-        this.currentPlayer = currentPlayer;
+    public ChanceCard(Player[] players, String msgKeyWord){
         this.players = players;
         this.msgKeyWord = msgKeyWord;
     }
 
-    public abstract String useChanceCard();
+    public abstract String useChanceCard(Player currentPlayer);
 
 }

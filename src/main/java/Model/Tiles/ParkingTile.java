@@ -4,12 +4,12 @@ import Model.Player;
 
 public class ParkingTile extends Tile {
 
-    public ParkingTile(Player currentPlayer, Player[] players) {
-        super(currentPlayer, players);
+    public ParkingTile(Player[] players) {
+        super(players);
     }
 
     @Override
-    public void executeTile() {
+    public void executeTile(Player currentPlayer) {
 
     }
 }

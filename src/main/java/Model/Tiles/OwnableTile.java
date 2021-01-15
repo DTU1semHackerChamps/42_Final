@@ -7,13 +7,13 @@ public abstract class OwnableTile extends Tile {
 
     protected TileOwners owners;
 
-    public OwnableTile(Player currentPlayer, Player[] players, TileOwners owners) {
-        super(currentPlayer, players);
+    public OwnableTile(Player[] players, TileOwners owners) {
+        super( players);
         this.owners = owners;
     }
 
     @Override
-    public void executeTile() {
+    public void executeTile(Player currentPlayer) {
 
     }
 }

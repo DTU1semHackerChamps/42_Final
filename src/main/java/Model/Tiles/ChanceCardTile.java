@@ -2,7 +2,6 @@ package Model.Tiles;
 
 import Controller.ChanceCardController;
 import Model.ChanceCards.ChanceCard;
-import Model.GameEvents;
 import Model.Player;
 import View.EventsView;
 import gui_main.GUI;
@@ -15,8 +14,8 @@ public class ChanceCardTile extends Tile{
     GUI gui;
     HashMap<String,String> stringList;
 
-    public ChanceCardTile(Player currentPlayer, Player[] players, ChanceCard[] cardList,GUI gui, HashMap<String,String> stringList) {
-        super(currentPlayer, players);
+    public ChanceCardTile( Player[] players, ChanceCard[] cardList,GUI gui, HashMap<String,String> stringList) {
+        super(players);
         this.cardList = cardList;
         this.gui = gui;
         this.stringList = stringList;
@@ -24,8 +23,8 @@ public class ChanceCardTile extends Tile{
     }
 
     @Override
-    public void executeTile() {
-        String chanceCardKeyword = cardList[0].useChanceCard();
+    public void executeTile(Player currentPlayer) {
+        String chanceCardKeyword = cardList[0].useChanceCard(currentPlayer);
         ChanceCardController.shiftDeckOfCards(cardList);
         EventsView.chanceCardMsg(chanceCardKeyword, gui, stringList);
 

@@ -5,15 +5,15 @@ import Model.Player;
 public class TaxTile extends Tile{
 
 
-    public TaxTile(Player currentPlayer, Player[] players) {
-        super(currentPlayer, players);
+    public TaxTile(Player[] players) {
+        super(players);
     }
 
     /**
      * This method is responsible for taking either 4000 thousand or 10 percent of the player's balance, depends on the player's balance.
      */
     @Override
-    public void executeTile() {
+    public void executeTile(Player currentPlayer) {
 
         if (currentPlayer.getBalance() < 40000){
 

@@ -6,10 +6,9 @@ public abstract class Tile {
     protected Player[] players;
     protected Player currentPlayer;
 
-    public Tile(Player currentPlayer, Player[] players){
+    public Tile(Player[] players){
         this.players = players;
-        this.currentPlayer = currentPlayer;
     }
 
-    public abstract void executeTile();
+    public abstract void executeTile(Player currentPlayer);
 }
