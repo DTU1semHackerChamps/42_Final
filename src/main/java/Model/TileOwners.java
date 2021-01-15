@@ -4,6 +4,9 @@ public class TileOwners {
 
     private int[][] tileOwners;
 
+    /**
+     * The constructor, sets all the row in first column equal to -1.
+     */
     public TileOwners () {
         tileOwners = new int[40][3];
         for (int i = 0; i < tileOwners.length; i++) {
