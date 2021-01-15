@@ -75,7 +75,7 @@ public class ChanceCardController {
         chanceCards[index].useChanceCard();
 
 
-        if(index > 20){
+        if(index > 33){
             index = 0;
         }
 

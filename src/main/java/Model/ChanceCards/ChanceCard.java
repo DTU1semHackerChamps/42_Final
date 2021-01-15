@@ -14,6 +14,6 @@ public abstract class ChanceCard {
         this.msgKeyWord = msgKeyWord;
     }
 
-    public abstract String useChancecard();
+    public abstract String useChanceCard();
 
 }

@@ -11,7 +11,7 @@ public class PayBankCards extends ChanceCard {
     }
 
     @Override
-    public String useChancecard() {
+    public String useChanceCard() {
         currentPlayer.addBalance(-moneyAmount);
 
         return msgKeyWord;
