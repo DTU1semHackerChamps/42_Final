@@ -22,42 +22,42 @@ public class BuildableTile extends OwnableTile {
     public void executeTile() {
         int playerPosition = currentPlayer.getPosition();
 
-        int rent;
+        int rent = 0;
+        if (owners.getTileOwner(playerPosition) != -1) {
+            switch (owners.getTileHouses(playerPosition)) {
+                case 0:
+                    if (owners.getTileHotel(playerPosition) == 1) {
+                        rent = tilesData[playerPosition].getHotel();
+                    } else if (PropertyGroup.hasGroup(owners, players[owners.getTileOwner(playerPosition)], playerPosition, propertyGroups)) {
+                        rent = tilesData[playerPosition].getRentOfGround() * 2;
+                    } else {
+                        rent = tilesData[playerPosition].getRentOfGround();
+                    }
+                    currentPlayer.addBalance(-rent);
+                    players[owners.getTileOwner(playerPosition)].addBalance(rent);
 
-        switch(owners.getTileHouses(playerPosition)){
-            case 0:
-                if(owners.getTileHotel(playerPosition) == 1){
-                    rent = tilesData[playerPosition].getHotel();
-                } else if(PropertyGroup.hasGroup(owners,players[owners.getTileOwner(playerPosition)+1],playerPosition, propertyGroups)) {
-                    rent = tilesData[playerPosition].getRentOfGround()*2;
-                } else {
-                    rent = tilesData[playerPosition].getRentOfGround();
-                }
-                currentPlayer.addBalance(-rent);
-                players[owners.getTileOwner(playerPosition)+1].addBalance(rent);
-
-                break;
-            case 1:
-                rent = tilesData[playerPosition].getOneHouse();
-                currentPlayer.addBalance(-rent);
-                players[owners.getTileOwner(playerPosition)+1].addBalance(rent);
-                break;
-            case 2:
-                rent = tilesData[playerPosition].getTwoHouse();
-                currentPlayer.addBalance(-rent);
-                players[owners.getTileOwner(playerPosition)+1].addBalance(rent);
-                break;
-            case 3:
-                rent = tilesData[playerPosition].getThreeHouse();
-                currentPlayer.addBalance(-rent);
-                players[owners.getTileOwner(playerPosition)+1].addBalance(rent);
-                break;
-            case 4:
-                rent = tilesData[playerPosition].getFourHouse();
-                currentPlayer.addBalance(-rent);
-                players[owners.getTileOwner(playerPosition)+1].addBalance(rent);
-                break;
+                    break;
+                case 1:
+                    rent = tilesData[playerPosition].getOneHouse();
+                    currentPlayer.addBalance(-rent);
+                    players[owners.getTileOwner(playerPosition)].addBalance(rent);
+                    break;
+                case 2:
+                    rent = tilesData[playerPosition].getTwoHouse();
+                    currentPlayer.addBalance(-rent);
+                    players[owners.getTileOwner(playerPosition)].addBalance(rent);
+                    break;
+                case 3:
+                    rent = tilesData[playerPosition].getThreeHouse();
+                    currentPlayer.addBalance(-rent);
+                    players[owners.getTileOwner(playerPosition)].addBalance(rent);
+                    break;
+                case 4:
+                    rent = tilesData[playerPosition].getFourHouse();
+                    currentPlayer.addBalance(-rent);
+                    players[owners.getTileOwner(playerPosition)].addBalance(rent);
+                    break;
+            }
         }
-
     }
 }

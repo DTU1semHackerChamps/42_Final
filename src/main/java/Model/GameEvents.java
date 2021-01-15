@@ -4,6 +4,11 @@ import gui_main.GUI;
 
 public class GameEvents
 {
+    /**
+     * checks who went bankrupt and returns the last playing player
+     * @param bankruptPlayers
+     * @return the number of the winning player
+     */
     public static int whoWon(BankruptPlayers bankruptPlayers) {
         int allPlayers = bankruptPlayers.getBankruptPlayers().length;
         int winningPlayerNum = -1;
@@ -17,16 +22,6 @@ public class GameEvents
             }
         }
         return winningPlayerNum;
-    }
-
-    public static boolean hasWon(BankruptPlayers bankruptPlayers, GUI gui){
-        boolean endGame = false;
-        int i = whoWon(bankruptPlayers);
-        if(i != -1) {
-            gui.showMessage("Spiller" + i);
-            endGame = true;
-        }
-        return endGame;
     }
 
 }
