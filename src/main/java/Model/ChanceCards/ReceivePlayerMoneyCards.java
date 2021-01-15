@@ -15,14 +15,14 @@ public class ReceivePlayerMoneyCards extends ChanceCard{
         int totalPlayersGiving = 0;
         int recievingMoneyAmount;
         for (int i = 0; i < players.length; i++) {
-            if(this.currentPlayer.getPlayerNum() != i){
+            if(currentPlayer.getPlayerNum() != i){
                 players[i].addBalance(-moneyFromPlayers);
                 totalPlayersGiving++;
             }
 
         }
         recievingMoneyAmount = moneyFromPlayers * totalPlayersGiving;
-        this.currentPlayer.addBalance(recievingMoneyAmount);
+        currentPlayer.addBalance(recievingMoneyAmount);
 
         return msgKeyWord;
     }

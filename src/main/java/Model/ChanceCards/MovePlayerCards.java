@@ -12,7 +12,7 @@ public class MovePlayerCards extends ChanceCard {
 
     @Override
     public String useChanceCard(Player currentPlayer) {
-        this.currentPlayer.addPosition(moveAmount);
+        currentPlayer.addPosition(moveAmount);
 
         return msgKeyWord;
     }
