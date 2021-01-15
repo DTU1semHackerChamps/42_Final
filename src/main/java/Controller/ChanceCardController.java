@@ -7,8 +7,15 @@ import java.util.Random;
 
 public class ChanceCardController {
 
-    public static ChanceCard[] cardArrayInit(Player[] players, Player currentPlayer){
-        ChanceCard[] chanceCards = new ChanceCard[43];
+    private Player currentPlayer;
+
+    public ChanceCardController(Player currentPlayer){
+        this.currentPlayer = currentPlayer;
+
+    }
+
+    public ChanceCard[] cardArrayInit(Player[] players){
+        ChanceCard[] chanceCards = new ChanceCard[34];
 
         chanceCards[0] = new PayBankCards(currentPlayer, players, "chanceCard1Msg", 1000);
         chanceCards[1] = new PayBankCards(currentPlayer, players, "chanceCard2Msg", 300);
@@ -46,6 +53,10 @@ public class ChanceCardController {
         chanceCards[33] = new MovePlayerToCards(currentPlayer, players, "chanceCard28Msg", 39);
 
         return chanceCards;
+    }
+
+    public void setCurrentPlayer(Player currentPlayer) {
+        this.currentPlayer = currentPlayer;
     }
 
     /**
