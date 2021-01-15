@@ -16,6 +16,7 @@ import java.util.HashMap;
 
 public class GameController {
 
+
     public static void main(String[] args) throws IOException {
 
 
@@ -39,10 +40,11 @@ public class GameController {
         // Different prices for each purchasable property
         BuildableTilePrices[] buildTilePrices = BuildableTilePrices.tilesData();
         CompanyTilePrices[] companyTilePrices = CompanyTilePrices.companyData();
-        ChanceCard[] cardList = ChanceCardController.cardArrayInit(players,currentPlayer);
+        ChanceCardController chanceCards = new ChanceCardController(currentPlayer);
+        ChanceCard[] cardList = chanceCards.cardArrayInit(currentPlayer,players);
         ChanceCardController.cardShuffle(cardList);
         // Loads the effects that tiles do automatically.
-        Tile[] tileEffects = BoardController.boardTiles(buildTilePrices,currentPlayer,players,owners,propertyGroups, cardList);
+        Tile[] tileEffects = BoardController.boardTiles(buildTilePrices,currentPlayer,players,owners,propertyGroups, cardList, gui, stringList);
         // Loads the dice objects
         Dice dice1 = new Dice(0);
         Dice dice2 = new Dice(0);
@@ -73,8 +75,6 @@ public class GameController {
             // Moves the player with the sum of the 2 dice.
             currentPlayer.addPosition(sumOfDice);
             position = currentPlayer.getPosition();
-            // Triggers the effect that a tile can have ex: Pay rent, draw a chance card, go to jail ect.
-            tileEffects[position].executeTile();
             // Creates a roll button on the GUI
             PlayerView.rollScreen(gui,stringList);
 
@@ -85,12 +85,18 @@ public class GameController {
             PlayerView.updateBalances(gui_players,players);
             // Moves the currentPlayer on the board GUI
             PlayerView.updatePosition(fields, gui_players, players);
+            // Triggers the effect that a tile can have ex: Pay rent, draw a chance card, go to jail ect.
+            tileEffects[position].executeTile(currentPlayer);
+            // Updates the gui_players balance to the same as the stored value in the players
+            PlayerView.updateBalances(gui_players,players);
+            // Moves the currentPlayer on the board GUI
+            PlayerView.updatePosition(fields, gui_players, players);
 
             // ONLY FOR TESTING DELETE WHEN PROJECT IS DONE!!!!
             //****************************************************
             //****************************************************
-                owners.setTileOwner(1,1);
-                owners.setTileOwner(3,1);
+//                owners.setTileOwner(1,1);
+//                owners.setTileOwner(3,1);
             //****************************************************
             //****************************************************
 
