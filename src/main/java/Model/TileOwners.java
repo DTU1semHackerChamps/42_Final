@@ -4,6 +4,9 @@ public class TileOwners {
 
     private int[][] tileOwners;
 
+    /**
+     * The constructor, sets all the row in first column equal to -1.
+     */
     public TileOwners () {
         tileOwners = new int[40][3];
         for (int i = 0; i < tileOwners.length; i++) {
@@ -49,6 +52,11 @@ public class TileOwners {
         tileOwners[position][2] = hotel;
     }
 
+    /**
+     * This method is in charge of adding house to the players whenever it is called.
+     * As one can see it is void method,so it's not committed to return.
+     * @param position landing position of the player
+     */
     public void addTileHouses(int position){
         if (tileOwners[position][2] == 0) {
             if (tileOwners[position][1] < 4) {
