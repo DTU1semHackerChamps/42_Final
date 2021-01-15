@@ -47,8 +47,8 @@ public class GUIBoardData {
         GUIBoardData[] tilesData = new GUIBoardData[40];
 
 
-        tilesData[0] = new GUIBoardData(stringList.get("tileName0"), stringList.get("tileDesc0"), 0.99f,0.74f,0.62f); //start red
-        tilesData[1] = new GUIBoardData(stringList.get("tileName1"), stringList.get("tileDesc1"), 0.57f,1f,0.36f); //blue
+        tilesData[0] = new GUIBoardData(stringList.get("tileName0"), stringList.get("tileDesc0"), 0.0f,1.0f,0.59f); //start red
+        tilesData[1] = new GUIBoardData(stringList.get("tileName1"), stringList.get("tileDesc1"), 0.196f,1f,0.36f); //blue
         tilesData[2] = new GUIBoardData(stringList.get("tileName2"), stringList.get("tileDesc2"), 0.00f,0f,0.15f); //chanceCard
         tilesData[3] = new GUIBoardData(stringList.get("tileName3"), stringList.get("tileDesc3"), 0.57f,1f,0.36f); //blue
         tilesData[4] = new GUIBoardData(stringList.get("tileName4"), stringList.get("tileDesc4"), 0.00f,0f,0.88f); //neutralTiles

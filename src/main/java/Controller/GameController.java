@@ -5,6 +5,7 @@ import Model.Tiles.BuildableTile;
 import Model.Tiles.Tile;
 import View.*;
 import gui_fields.GUI_Field;
+import gui_fields.GUI_Ownable;
 import gui_fields.GUI_Player;
 import gui_fields.GUI_Street;
 import gui_main.GUI;
@@ -23,7 +24,6 @@ public class GameController {
         // Loads the GUI and the playing field.
         GUI_Street[] fields = new GUI_Street[40];
         GUI gui = BoardView.initBoard(stringList, fields, GUIBoardData.tilesData(stringList), BuildableTilePrices.tilesData(), CompanyTilePrices.companyData());
-
 
         // Objects getting initialized for later use in the game
         //************************************************************************************
@@ -55,7 +55,11 @@ public class GameController {
         //************************************************************************************
 
 
+
+
         while (true){
+            PropertyOwnerView.tilDescriptions(fields);
+
             // Assigns the current players number, and the current player of the round
             currentPlayerNum = Player.switchPlayer(currentPlayerNum,players,bankruptPlayers);
             currentPlayer = players[currentPlayerNum];
@@ -70,6 +74,8 @@ public class GameController {
             tileEffects[position].executeTile();
             // Creates a roll button on the GUI
             PlayerView.rollScreen(gui,stringList);
+
+
             // Makes the dice appear on the GUI
             PlayerView.displayDice(gui,dice1.getFaceValue(),dice2.getFaceValue());
             // Updates the gui_players balance to the same as the stored value in the players
@@ -109,6 +115,7 @@ public class GameController {
                 }
                 // Changes the border color of a property to the same color as the player owning it.
                 PropertyOwnerView.updateBorderColor(fields,owners,PlayerColor.initPlayerColor());
+
             }
             // Checks for any bankrupt players so they will be skipped
             bankruptPlayers.updateBankruptPlayers(players);
