@@ -1,7 +1,6 @@
 package View;
 
 import Model.*;
-import gui_fields.GUI_Player;
 import gui_fields.GUI_Street;
 import gui_main.GUI;
 
@@ -76,7 +75,7 @@ public class PropertyOwnerView {
         return housePosition;
     }
 
-    public static void tilDescriptions(GUI_Street[] fields) {
+    public static void tileDescriptions(GUI_Street[] fields) {
         String rent = "    Leje af ejendommen ";
         String hHOne = "\\n Hvert hus => 1000 kr. \\nEt hotel => 1000 + 4 huse";
         String hHTwo = "\\n Hvert hus => 2.000 kr. \\nEt hotel => 2.000 + 4 huse";
@@ -165,7 +164,7 @@ public class PropertyOwnerView {
                 " \\n  Hotel => 40.000 kr. \\n" + hHFour);
 
         // færgerne
-        String ferry = "Betal 4000 kr. for fægen";
+        String ferry = "Betal 4000 kr. for færgen";
         fields[5].setDescription(ferry);
         fields[15].setDescription(ferry);
         fields[25].setDescription(ferry);
