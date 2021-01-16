@@ -21,8 +21,8 @@ public class BuildableTile extends OwnableTile {
     @Override
     public void executeTile(Player currentPlayer) {
         int playerPosition = currentPlayer.getPosition();
-
         int rent = 0;
+
         if (owners.getTileOwner(playerPosition) != -1) {
             switch (owners.getTileHouses(playerPosition)) {
                 case 0:

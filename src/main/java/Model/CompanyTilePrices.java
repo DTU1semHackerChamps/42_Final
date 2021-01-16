@@ -28,6 +28,7 @@ public class CompanyTilePrices {
         companyData[15] = new CompanyTilePrices(500, 1000, 2000, 4000, 4000);
         companyData[25] = new CompanyTilePrices(500, 1000, 2000, 4000, 4000);
         companyData[35] = new CompanyTilePrices(500, 1000, 2000, 4000, 4000);
+        // Brewery tiles
         companyData[12] = new CompanyTilePrices(0, 0, 0, 0, 3000);
         companyData[28] = new CompanyTilePrices(0, 0, 0, 0, 3000);
         return companyData;

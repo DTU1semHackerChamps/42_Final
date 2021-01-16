@@ -1,10 +1,7 @@
 package Controller;
 
-import Model.BuildableTilePrices;
+import Model.*;
 import Model.ChanceCards.ChanceCard;
-import Model.Player;
-import Model.PropertyGroup;
-import Model.TileOwners;
 import Model.Tiles.*;
 import gui_main.GUI;
 

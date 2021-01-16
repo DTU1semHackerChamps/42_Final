@@ -41,7 +41,7 @@ public class GameController {
         ChanceCard[] cardList = chanceCards.cardArrayInit(currentPlayer,players);
         ChanceCardController.cardShuffle(cardList);
         // Loads the effects that tiles do automatically.
-        Tile[] tileEffects = BoardController.boardTiles(buildTilePrices,currentPlayer,players,owners,propertyGroups, cardList, gui, stringList);
+        Tile[] tileEffects = BoardControllerA.boardTiles(buildTilePrices,currentPlayer,players,owners,propertyGroups, cardList, gui, stringList);
         // Loads the dice objects
         Dice dice1 = new Dice(0);
         Dice dice2 = new Dice(0);
@@ -55,7 +55,6 @@ public class GameController {
         int position = 0;
         String menuString = "";
         //************************************************************************************
-
 
 
         while (true){
