@@ -2,8 +2,8 @@ package Model.ChanceCards;
 
 import Model.Player;
 
-public class goToJailCards extends ChanceCard {
-    public goToJailCards(Player[] players, String msgKeyWord) {
+public class GoToJailCards extends ChanceCard {
+    public GoToJailCards(Player[] players, String msgKeyWord) {
         super(players, msgKeyWord);
     }
 

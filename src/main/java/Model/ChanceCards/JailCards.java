@@ -9,7 +9,7 @@ public class JailCards extends ChanceCard {
 
     @Override
     public String useChanceCard(Player currentPlayer) {
-        currentPlayer.setJailCard(true);
+        currentPlayer.setJailCard(true) ;
         return msgKeyWord;
     }
 }
