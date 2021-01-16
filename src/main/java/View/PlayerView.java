@@ -10,6 +10,7 @@ import gui_fields.GUI_Board;
 
 import java.awt.*;
 import java.util.HashMap;
+import java.util.Random;
 import java.util.concurrent.TimeUnit;
 
 public class PlayerView {
@@ -93,7 +94,14 @@ public class PlayerView {
      * @param dice2 face-value2
      */
     public static void displayDice(GUI gui,int dice1, int dice2){
-        gui.setDice(dice1,4,3,dice2,6,3);
+
+        int max = 9;
+        int x1 = (int) (Math.random() * max) + 1;
+        int y1 = 2;
+        int x2 = (int) (Math.random() * max) + 1;
+        int y2 = 3;
+
+        gui.setDice(dice1,x1,y1,dice2,x2,y2);
 
     }
 
