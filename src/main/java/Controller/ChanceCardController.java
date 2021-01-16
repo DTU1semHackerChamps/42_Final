@@ -51,6 +51,8 @@ public class ChanceCardController {
         chanceCards[31] = new MovePlayerToCards(players, "chanceCard26Msg", 32);
         chanceCards[32] = new MovePlayerToCards(players, "chanceCard27Msg", 19);
         chanceCards[33] = new MovePlayerToCards(players, "chanceCard28Msg", 39);
+        chanceCards[34] = new JailCards(players,"chanceCard29Msg");
+
 
         return chanceCards;
     }
