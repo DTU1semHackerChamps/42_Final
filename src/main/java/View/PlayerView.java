@@ -101,9 +101,10 @@ public class PlayerView {
      * This method displays a message and waits for player to response by clicking the button,
      * afterwards sends back a boolean value.
      * @param gui the GUI package.
-     * @param rollScreenMessage the message that supposed to be on the screen.
-     * @param rollButton name of the button.
-     * @return returns a boolean value.
+     * @param stringList the message strings from the Hashmap displayed on the screen GUI.
+     * @param guiPlayers to get the players name for the turn
+     * @param currentPlayerNum the current player number
+     * @return
      */
     public static boolean rollScreen(GUI gui, HashMap<String, String> stringList, GUI_Player[] guiPlayers, int currentPlayerNum){
         boolean buttonPress;
