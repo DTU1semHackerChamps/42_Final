@@ -180,3 +180,5 @@ choosePlayers
 Vælg en spiller du vil sælge til.
 winMessage
  har vundet!
+goToJailMsg
+ er blevet fængslet

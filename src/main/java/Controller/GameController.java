@@ -98,6 +98,9 @@ public class GameController {
             PlayerView.updateBalances(guiPlayers,players);
             // Moves the currentPlayer on the board GUI
             PlayerView.updatePosition(fields, guiPlayers, players);
+            if((currentPlayer.getPosition() == 10) && (currentPlayer.isInJail())){
+                EventsView.goToJailMsg(stringList, gui, guiPlayers, currentPlayerNum);
+            }
 
 
 

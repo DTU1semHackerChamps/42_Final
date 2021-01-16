@@ -29,4 +29,10 @@ public class EventsView {
     public static void chanceCardMsg(String chanceCardKeyWord, GUI gui,HashMap<String,String> stringList){
         gui.showMessage(stringList.get(chanceCardKeyWord));
     }
+
+    public static void goToJailMsg(HashMap<String,String> stringList, GUI gui, GUI_Player[] guiPlayer, int currentPlayerNum){
+        String goToJailMsg = guiPlayer[currentPlayerNum].getName() + stringList.get("goToJailMsg");
+        gui.showMessage(goToJailMsg);
+    }
+
 }
