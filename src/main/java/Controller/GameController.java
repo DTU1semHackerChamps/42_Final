@@ -68,9 +68,10 @@ public class GameController {
             currentPlayerNum = Player.switchPlayer(currentPlayerNum,players,bankruptPlayers);
             currentPlayer = players[currentPlayerNum];
 
-            if(currentPlayer.isInJail() == true){
+            if(currentPlayer.isInJail()){
                 // Triggers the effect that a tile can have ex: Pay rent, draw a chance card, go to jail ect.
-                tileEffects[position].executeTile(currentPlayer, -1);
+                tileEffects[10].executeTile(currentPlayer, -1);
+
             }
 
             dice1.rollDice();
@@ -78,7 +79,6 @@ public class GameController {
 
 
             sumOfDice = dice1.getFaceValue() + dice2.getFaceValue();
-            sumOfDice = 2;
             // Moves the player with the sum of the 2 dice.
             currentPlayer.addPosition(sumOfDice);
             position = currentPlayer.getPosition();

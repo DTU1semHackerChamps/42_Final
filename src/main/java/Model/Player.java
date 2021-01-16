@@ -24,7 +24,7 @@ public class Player {
     }
 
     public boolean isJailCard() {
-        return inJail;
+        return jailCard;
     }
 
     public boolean isInJail() {
