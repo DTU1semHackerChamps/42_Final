@@ -80,9 +80,9 @@ public class BoardView {
      * @return participants input
      */
 
-    public static String playerTurnMenu(GUI gui, HashMap<String, String> stringList){
+    public static String playerTurnMenu(GUI gui, HashMap<String, String> stringList, GUI_Player[] guiPlayer, int currentPlayerNum){
         String buttonPress;
-        String screenMsg = stringList.get("playerTurnChoise");
+        String screenMsg = guiPlayer[currentPlayerNum].getName() + stringList.get("playerTurnChoice");
         String buttonMsg = stringList.get("endTurnMsg");
         String buttonMsg1 = stringList.get("buyPropertyMsg");
         String buttonMsg2 = stringList.get("buildOnPropertyMsg");

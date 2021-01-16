@@ -15,7 +15,7 @@ public class GameEvents
 
         if(bankruptPlayers.numOfBankruptPlayers() == allPlayers - 1){
             for (int i = 0; i < allPlayers; i++) {
-                if(bankruptPlayers.getBankruptPlayers()[i]){
+                if(!bankruptPlayers.getBankruptPlayers()[i]){
                     winningPlayerNum = i;
 
                 }

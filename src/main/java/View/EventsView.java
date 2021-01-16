@@ -16,11 +16,11 @@ import java.util.concurrent.TimeUnit;
 
 public class EventsView {
 
-    public static boolean hasWon (BankruptPlayers bankruptPlayers, GUI gui){
+    public static boolean hasWon (HashMap<String,String> stringList,BankruptPlayers bankruptPlayers, GUI gui, GUI_Player[] guiPlayer){
         boolean endGame = false;
         int i = GameEvents.whoWon(bankruptPlayers);
         if(i != -1) {
-            gui.showMessage("Spiller" + i);
+            gui.showMessage(guiPlayer[i].getName() + stringList.get("winMessage"));
             endGame = true;
         }
         return endGame;

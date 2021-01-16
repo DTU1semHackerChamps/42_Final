@@ -31,9 +31,9 @@ public class GameController {
         // Objects getting initialized for later use in the game
         //************************************************************************************
         Player[] players = Player.playerList(PlayerView.getNumberOfPlayers(gui, stringList));
-        Player currentPlayer = new Player(0,0,false,0);
+        Player currentPlayer = new Player(0,0,0,false, false);
         BankruptPlayers bankruptPlayers = new BankruptPlayers(players);
-        GUI_Player[] gui_players = PlayerView.displayAddPlayer(stringList, gui, fields, players);
+        GUI_Player[] guiPlayers = PlayerView.displayAddPlayer(stringList, gui, fields, players);
         // Loads the object that determines the different color groups for each purchasable tile.
         PropertyGroup[] propertyGroups = PropertyGroup.tileGroups();
         // Loads the object that stores the owners for different purchasable tile.
@@ -59,7 +59,7 @@ public class GameController {
 
         while (true){
             // The win screen with a button to close the game.
-            if(EventsView.hasWon(bankruptPlayers, gui)){
+            if(EventsView.hasWon(stringList, bankruptPlayers, gui, guiPlayers)){
                 System.exit(0);
             }
 
@@ -70,40 +70,39 @@ public class GameController {
             dice1.rollDice();
             dice2.rollDice();
 
-            players[1].setBalance(-100);
 
             sumOfDice = dice1.getFaceValue() + dice2.getFaceValue();
             // Moves the player with the sum of the 2 dice.
             currentPlayer.addPosition(sumOfDice);
             position = currentPlayer.getPosition();
             // Creates a roll button on the GUI
-            PlayerView.rollScreen(gui,stringList);
+            PlayerView.rollScreen(gui,stringList, guiPlayers, currentPlayerNum);
 
 
             // Makes the dice appear on the GUI
             PlayerView.displayDice(gui,dice1.getFaceValue(),dice2.getFaceValue());
             // Updates the gui_players balance to the same as the stored value in the players
-            PlayerView.updateBalances(gui_players,players);
+            PlayerView.updateBalances(guiPlayers,players);
             // Moves the currentPlayer on the board GUI
-            PlayerView.updatePosition(fields, gui_players, players);
+            PlayerView.updatePosition(fields, guiPlayers, players);
             // Triggers the effect that a tile can have ex: Pay rent, draw a chance card, go to jail ect.
             tileEffects[position].executeTile(currentPlayer, sumOfDice);
             // Updates the gui_players balance to the same as the stored value in the players
-            PlayerView.updateBalances(gui_players,players);
+            PlayerView.updateBalances(guiPlayers,players);
             // Moves the currentPlayer on the board GUI
-            PlayerView.updatePosition(fields, gui_players, players);
+            PlayerView.updatePosition(fields, guiPlayers, players);
 
 
 
             while(true){
                 // Shows a menu with buttons that dictates the choices a player can make in a turn.
-                menuString = BoardView.playerTurnMenu(gui,stringList);
+                menuString = BoardView.playerTurnMenu(gui, stringList, guiPlayers, currentPlayerNum);
                 // The "if else" checks to see what String the previous button press from the menu returns.
                 if(menuString.equals(stringList.get("buyPropertyMsg"))){
                     // Shows a message on the GUI depending on how much money the currentPlayer has
                     BoardView.buyPropertyView(BuyProperty.buyProperty(currentPlayer, owners, buildTilePrices, companyTilePrices), gui, stringList);
                     // Updates the gui_players balance to the same as the stored value in the players
-                    PlayerView.updateBalances(gui_players,players);
+                    PlayerView.updateBalances(guiPlayers,players);
 
                 }else if(menuString.equals(stringList.get("buildOnPropertyMsg"))){
                     // Assigns an integer to buildingPosition to know where the player is building.
@@ -113,7 +112,7 @@ public class GameController {
                     // buildHouse() will take money from the currentPlayer and stores that a house has been built
                     int buildingPosition = BuildingsView.buildingAvailability(stringList,GUIBoardData.tilesGUIData(stringList), gui, players[currentPlayerNum], owners, propertyGroups);
                     boolean buildHouse = BuyHouse.buildHouse(buildTilePrices, currentPlayer, buildingPosition, owners);
-                    PlayerView.updateBalances(gui_players,players);
+                    PlayerView.updateBalances(guiPlayers,players);
                     // Returns a message depending on the buildHouse() returns true or not
                     BoardView.buyHouseView(buildHouse,gui,stringList);
                     // Makes the house appear on the GUI board
@@ -123,7 +122,7 @@ public class GameController {
                 }else if(menuString.equals(stringList.get("sellOnPropertyMsg"))){
                     int sellBuildingPosition = PropertyOwnerView.sellHouseView(stringList,GUIBoardData.tilesGUIData(stringList),gui,players[currentPlayerNum],owners,propertyGroups);
                     SellProperty.sellHouse(buildTilePrices,currentPlayer,sellBuildingPosition,owners);
-                    PlayerView.updateBalances(gui_players,players);
+                    PlayerView.updateBalances(guiPlayers,players);
                     BuildingsView.updateBuildings(fields,owners);
                 }else{
                     // This end the currentPlayers turn

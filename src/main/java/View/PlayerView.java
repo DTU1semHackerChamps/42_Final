@@ -105,9 +105,9 @@ public class PlayerView {
      * @param rollButton name of the button.
      * @return returns a boolean value.
      */
-    public static boolean rollScreen(GUI gui, HashMap<String, String> stringList){
+    public static boolean rollScreen(GUI gui, HashMap<String, String> stringList, GUI_Player[] guiPlayers, int currentPlayerNum){
         boolean buttonPress;
-        String rollScreenMessage = stringList.get("rollScreenMessage");
+        String rollScreenMessage = guiPlayers[currentPlayerNum].getName() + stringList.get("rollScreenMessage");
         String rollButton = stringList.get("rollButton");
         buttonPress = gui.getUserButtonPressed( rollScreenMessage, rollButton).equals(rollButton);
         return buttonPress;
