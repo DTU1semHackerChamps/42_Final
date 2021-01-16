@@ -2,11 +2,8 @@ package Controller;
 
 import Model.*;
 import Model.ChanceCards.ChanceCard;
-import Model.Tiles.BuildableTile;
 import Model.Tiles.Tile;
 import View.*;
-import gui_fields.GUI_Field;
-import gui_fields.GUI_Ownable;
 import gui_fields.GUI_Player;
 import gui_fields.GUI_Street;
 import gui_main.GUI;
@@ -23,9 +20,12 @@ public class GameController {
         // loads the file of the corresponding language input string
         HashMap<String, String> stringList = Language.languageInit("Danish");
 
+        // Different prices for each purchasable property
+        BuildableTilePrices[] buildTilePrices = BuildableTilePrices.tilesPriceData();
+        CompanyTilePrices[] companyTilePrices = CompanyTilePrices.companyData();
         // Loads the GUI and the playing field.
         GUI_Street[] fields = new GUI_Street[40];
-        GUI gui = BoardView.initBoard(stringList, fields, GUIBoardData.tilesData(stringList), BuildableTilePrices.tilesData(), CompanyTilePrices.companyData());
+        GUI gui = BoardView.initBoard(stringList, fields, GUIBoardData.tilesGUIData(stringList), buildTilePrices, companyTilePrices);
 
         // Objects getting initialized for later use in the game
         //************************************************************************************
@@ -37,9 +37,6 @@ public class GameController {
         PropertyGroup[] propertyGroups = PropertyGroup.tileGroups();
         // Loads the object that stores the owners for different purchasable tile.
         TileOwners owners = new TileOwners();
-        // Different prices for each purchasable property
-        BuildableTilePrices[] buildTilePrices = BuildableTilePrices.tilesData();
-        CompanyTilePrices[] companyTilePrices = CompanyTilePrices.companyData();
         ChanceCardController chanceCards = new ChanceCardController(currentPlayer);
         ChanceCard[] cardList = chanceCards.cardArrayInit(currentPlayer,players);
         ChanceCardController.cardShuffle(cardList);
@@ -58,7 +55,6 @@ public class GameController {
         int position = 0;
         String menuString = "";
         //************************************************************************************
-
 
 
 
@@ -117,7 +113,7 @@ public class GameController {
                     // If the player does not have all properties in any color group, a message will pop up telling the player.
                     // This integer is used in buildHouse.
                     // buildHouse() will take money from the currentPlayer and stores that a house has been built
-                    int buildingPosition = BuildingsView.buildingAvailability(stringList,GUIBoardData.tilesData(stringList), gui, players[currentPlayerNum], owners, propertyGroups);
+                    int buildingPosition = BuildingsView.buildingAvailability(stringList,GUIBoardData.tilesGUIData(stringList), gui, players[currentPlayerNum], owners, propertyGroups);
                     boolean buildHouse = BuyHouse.buildHouse(buildTilePrices, currentPlayer, buildingPosition, owners);
                     PlayerView.updateBalances(gui_players,players);
                     // Returns a message depending on the buildHouse() returns true or not
@@ -127,7 +123,7 @@ public class GameController {
 
 
                 }else if(menuString.equals(stringList.get("sellOnPropertyMsg"))){
-                    int sellBuildingPosition = PropertyOwnerView.sellHouseView(stringList,GUIBoardData.tilesData(stringList),gui,players[currentPlayerNum],owners,propertyGroups);
+                    int sellBuildingPosition = PropertyOwnerView.sellHouseView(stringList,GUIBoardData.tilesGUIData(stringList),gui,players[currentPlayerNum],owners,propertyGroups);
                     SellProperty.sellHouse(buildTilePrices,currentPlayer,sellBuildingPosition,owners);
                     PlayerView.updateBalances(gui_players,players);
                     BuildingsView.updateBuildings(fields,owners);

@@ -20,17 +20,17 @@ public class CompanyTilePrices {
      * @return data
      */
     public static CompanyTilePrices[] companyData(){
-        CompanyTilePrices[] data = new CompanyTilePrices[40];
+        CompanyTilePrices[] companyData = new CompanyTilePrices[40];
         for(int i = 0; i < 40; i++){
-            data[i] = new CompanyTilePrices(0,0,0,0,0);
+            companyData[i] = new CompanyTilePrices(0,0,0,0,0);
         }
-        data[5] = new CompanyTilePrices(500, 1000, 2000, 4000, 4000);
-        data[15] = new CompanyTilePrices(500, 1000, 2000, 4000, 4000);
-        data[25] = new CompanyTilePrices(500, 1000, 2000, 4000, 4000);
-        data[35] = new CompanyTilePrices(500, 1000, 2000, 4000, 4000);
-        data[12] = new CompanyTilePrices(0, 0, 0, 0, 3000);
-        data[28] = new CompanyTilePrices(0, 0, 0, 0, 3000);
-        return data;
+        companyData[5] = new CompanyTilePrices(500, 1000, 2000, 4000, 4000);
+        companyData[15] = new CompanyTilePrices(500, 1000, 2000, 4000, 4000);
+        companyData[25] = new CompanyTilePrices(500, 1000, 2000, 4000, 4000);
+        companyData[35] = new CompanyTilePrices(500, 1000, 2000, 4000, 4000);
+        companyData[12] = new CompanyTilePrices(0, 0, 0, 0, 3000);
+        companyData[28] = new CompanyTilePrices(0, 0, 0, 0, 3000);
+        return companyData;
     }
 
     /** data object
