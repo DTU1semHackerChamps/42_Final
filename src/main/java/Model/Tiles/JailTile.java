@@ -10,6 +10,13 @@ public class JailTile extends Tile{
 
     @Override
     public void executeTile(Player currentPlayer, int sumOfDice) {
-
+        if(currentPlayer.isInJail()){
+            if (!currentPlayer.isJailCard()) {
+                currentPlayer.addBalance(-1000);
+            } else{
+                currentPlayer.setJailCard(false);
+            }
+            currentPlayer.setJailCard(false);
+        }
     }
 }
