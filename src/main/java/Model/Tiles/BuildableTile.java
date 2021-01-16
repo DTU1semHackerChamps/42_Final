@@ -19,7 +19,7 @@ public class BuildableTile extends OwnableTile {
     }
 
     @Override
-    public void executeTile(Player currentPlayer) {
+    public void executeTile(Player currentPlayer, int sumOfDice) {
         int playerPosition = currentPlayer.getPosition();
         int rent = 0;
 

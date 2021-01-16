@@ -41,7 +41,7 @@ public class GameController {
         ChanceCard[] cardList = chanceCards.cardArrayInit(currentPlayer,players);
         ChanceCardController.cardShuffle(cardList);
         // Loads the effects that tiles do automatically.
-        Tile[] tileEffects = BoardControllerA.boardTiles(buildTilePrices,currentPlayer,players,owners,propertyGroups, cardList, gui, stringList);
+        Tile[] tileEffects = BoardController.boardTiles(buildTilePrices,currentPlayer,players,owners,propertyGroups, cardList, gui, stringList);
         // Loads the dice objects
         Dice dice1 = new Dice(0);
         Dice dice2 = new Dice(0);
@@ -66,6 +66,8 @@ public class GameController {
 
             dice1.rollDice();
             dice2.rollDice();
+
+
             sumOfDice = dice1.getFaceValue() + dice2.getFaceValue();
             // Moves the player with the sum of the 2 dice.
             currentPlayer.addPosition(sumOfDice);
@@ -81,7 +83,7 @@ public class GameController {
             // Moves the currentPlayer on the board GUI
             PlayerView.updatePosition(fields, gui_players, players);
             // Triggers the effect that a tile can have ex: Pay rent, draw a chance card, go to jail ect.
-            tileEffects[position].executeTile(currentPlayer);
+            tileEffects[position].executeTile(currentPlayer, sumOfDice);
             // Updates the gui_players balance to the same as the stored value in the players
             PlayerView.updateBalances(gui_players,players);
             // Moves the currentPlayer on the board GUI

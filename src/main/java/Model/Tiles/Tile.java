@@ -10,5 +10,5 @@ public abstract class Tile {
         this.players = players;
     }
 
-    public abstract void executeTile(Player currentPlayer);
+    public abstract void executeTile(Player currentPlayer, int sumOfDice);
 }

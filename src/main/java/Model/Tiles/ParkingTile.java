@@ -9,7 +9,7 @@ public class ParkingTile extends Tile {
     }
 
     @Override
-    public void executeTile(Player currentPlayer) {
+    public void executeTile(Player currentPlayer, int sumOfDice) {
 
     }
 }

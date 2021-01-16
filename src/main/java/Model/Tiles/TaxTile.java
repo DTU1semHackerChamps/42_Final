@@ -13,7 +13,7 @@ public class TaxTile extends Tile{
      * This method is responsible for taking either 4000 thousand or 10 percent of the player's balance, depends on the player's balance.
      */
     @Override
-    public void executeTile(Player currentPlayer) {
+    public void executeTile(Player currentPlayer, int sumOfDice) {
 
         if (currentPlayer.getBalance() < 40000){
 

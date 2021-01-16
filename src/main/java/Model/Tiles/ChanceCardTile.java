@@ -23,7 +23,7 @@ public class ChanceCardTile extends Tile{
     }
 
     @Override
-    public void executeTile(Player currentPlayer) {
+    public void executeTile(Player currentPlayer, int sumOfDice) {
         String chanceCardKeyword = cardList[0].useChanceCard(currentPlayer);
         ChanceCardController.shiftDeckOfCards(cardList);
         EventsView.chanceCardMsg(chanceCardKeyword, gui, stringList);
