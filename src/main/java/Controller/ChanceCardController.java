@@ -15,7 +15,7 @@ public class ChanceCardController {
     }
 
     public static ChanceCard[] cardArrayInit(Player currentPlayer,Player[] players){
-        ChanceCard[] chanceCards = new ChanceCard[34];
+        ChanceCard[] chanceCards = new ChanceCard[37];
 
         chanceCards[0] = new PayBankCards(players, "chanceCard1Msg", 1000);
         chanceCards[1] = new PayBankCards(players, "chanceCard2Msg", 300);
@@ -91,17 +91,61 @@ public class ChanceCardController {
     public static void shiftDeckOfCards(ChanceCard[] chanceCards){
 
         int length = chanceCards.length;
-        ChanceCard[] tempChanceCards = chanceCards;
+        ChanceCard tempChanceCard;
 
-        for(int i = 0; i < length; i++){
 
-            if(i == 0){
-                chanceCards[i] = tempChanceCards[length - 1];
-            }
 
-            if(i < length - 1){
-                chanceCards[i + 1] = tempChanceCards[i];
-            }
+//
+//            tempChanceCards = chanceCards[length-1];
+//            for (int j = length-1; j > 0; j--) {
+//                chanceCards[j] = chanceCards[j-1];
+//            }
+//            chanceCards[i] = tempChanceCards;
+//
+
+
+        tempChanceCard = chanceCards[length - 1];
+
+        for(int i = length-1; i > 0; i--){
+
+            chanceCards[i] = chanceCards[i - 1];
+
         }
+
+        chanceCards[0] = tempChanceCard;
+
+
+
+
+    }
+
+    public static void main(String[] args) {
+        int[] chanceCards = {1,2,3,4,5,6,7,8,9,10};
+        int length = chanceCards.length;
+        int tempChanceCard;
+
+        for (int i = 0; i < length; i++) {
+            System.out.print(chanceCards[i]+" ");
+
+        }
+
+        tempChanceCard = chanceCards[length - 1];
+
+        for(int i = length-1; i > 0; i--){
+
+            chanceCards[i] = chanceCards[i - 1];
+
+        }
+
+        chanceCards[0] = tempChanceCard;
+
+        System.out.println();
+        for (int i = 0; i < length; i++) {
+            System.out.print(chanceCards[i]+" ");
+
+        }
+
+
+
     }
 }

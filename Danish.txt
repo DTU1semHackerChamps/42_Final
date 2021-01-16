@@ -137,7 +137,7 @@ Grundet dyrtiden har De fået gageforhøjelse, modtag kr 1000.
 chanceCard15Msg
 Deres præmieobligation er udtrykket. De modtager 1000 kr af banken.
 chanceCard16Msg
-De har solg nogle gamle møbler på auktion. Modtag 1000 kr af banken.
+De har solgt nogle gamle møbler på auktion. Modtag 1000 kr af banken.
 chanceCard17Msg
 Værdien af egen avl fra nyttehaven udgør 200 som de modtager af banken
 chanceCard18Msg

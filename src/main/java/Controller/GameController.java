@@ -51,13 +51,14 @@ public class GameController {
         //Simple variables getting initialized for later use in the game
         //************************************************************************************
         int currentPlayerNum = players.length - 1;
-        int sumOfDice;
+        int sumOfDice = 0;
         int position = 0;
         String menuString = "";
         //************************************************************************************
 
 
         while (true){
+
             // The win screen with a button to close the game.
             if(EventsView.hasWon(stringList, bankruptPlayers, gui, guiPlayers)){
                 System.exit(0);
@@ -67,11 +68,17 @@ public class GameController {
             currentPlayerNum = Player.switchPlayer(currentPlayerNum,players,bankruptPlayers);
             currentPlayer = players[currentPlayerNum];
 
+            if(currentPlayer.isInJail() == true){
+                // Triggers the effect that a tile can have ex: Pay rent, draw a chance card, go to jail ect.
+                tileEffects[position].executeTile(currentPlayer, -1);
+            }
+
             dice1.rollDice();
             dice2.rollDice();
 
 
             sumOfDice = dice1.getFaceValue() + dice2.getFaceValue();
+            sumOfDice = 2;
             // Moves the player with the sum of the 2 dice.
             currentPlayer.addPosition(sumOfDice);
             position = currentPlayer.getPosition();
