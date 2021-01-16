@@ -5,17 +5,17 @@ public class Player {
     private int balance;
     private int position;
     private int playerNum;
-    private boolean isInJail;
+    private boolean inJail;
     private boolean jailCard;
 
 
 
-    public Player(int balance, int position, int playerNum , boolean isInJail, boolean jailCard){
+    public Player(int balance, int position, int playerNum , boolean inJail, boolean jailCard){
 
         this.balance = balance;
         this.position = position;
         this.playerNum = playerNum;
-        this.isInJail = isInJail;
+        this.inJail = inJail;
         this.jailCard = jailCard;
     }
 
@@ -24,9 +24,16 @@ public class Player {
     }
 
     public boolean isJailCard() {
-        return isInJail;
+        return inJail;
     }
 
+    public boolean isInJail() {
+        return inJail;
+    }
+
+    public void setInJail(boolean isInJail) {
+        this.inJail = isInJail;
+    }
 
     public int getBalance() {
         return balance;
@@ -52,10 +59,6 @@ public class Player {
         position = newPosition;
     }
 
-
-    public void setIsInJail(boolean isInJail) {
-        this.isInJail = isInJail;
-    }
 
     public int getPlayerNum() {
         return playerNum;

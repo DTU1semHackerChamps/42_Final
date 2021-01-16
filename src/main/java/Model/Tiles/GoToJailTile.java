@@ -14,6 +14,7 @@ public class GoToJailTile extends Tile{
     @Override
     public void executeTile(Player currentPlayer, int sumOfDice) {
        currentPlayer.setPosition(10);
-       currentPlayer.setIsInJail(true);
+       currentPlayer.setInJail(true);
+       currentPlayer.addBalance(-4000);
     }
 }
