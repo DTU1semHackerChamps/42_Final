@@ -84,7 +84,7 @@ public class ChanceCardController {
 
     /**
      * Last chanceCard is placed first in array and the rest of the array is shifted one index up.
-     * @param chanceCards An already initalised array of chanceCards.
+     * @param chanceCards An already initialised array of chanceCards.
      */
     public static void shiftDeckOfCards(ChanceCard[] chanceCards){
 

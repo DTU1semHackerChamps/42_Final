@@ -26,6 +26,7 @@ public class GameController {
         // Loads the GUI and the playing field.
         GUI_Street[] fields = new GUI_Street[40];
         GUI gui = BoardView.initBoard(stringList, fields, GUIBoardData.tilesGUIData(stringList), buildTilePrices, companyTilePrices);
+        PropertyOwnerView.tileDescriptions(fields);
 
         // Objects getting initialized for later use in the game
         //************************************************************************************
@@ -37,8 +38,7 @@ public class GameController {
         PropertyGroup[] propertyGroups = PropertyGroup.tileGroups();
         // Loads the object that stores the owners for different purchasable tile.
         TileOwners owners = new TileOwners();
-        ChanceCardController chanceCards = new ChanceCardController(currentPlayer);
-        ChanceCard[] cardList = chanceCards.cardArrayInit(currentPlayer,players);
+        ChanceCard[] cardList = ChanceCardController.cardArrayInit(currentPlayer,players);
         ChanceCardController.cardShuffle(cardList);
         // Loads the effects that tiles do automatically.
         Tile[] tileEffects = BoardController.boardTiles(buildTilePrices,currentPlayer,players,owners,propertyGroups, cardList, gui, stringList);
@@ -58,7 +58,10 @@ public class GameController {
 
 
         while (true){
-            PropertyOwnerView.tilDescriptions(fields);
+            // The win screen with a button to close the game.
+            if(EventsView.hasWon(bankruptPlayers, gui)){
+                System.exit(0);
+            }
 
             // Assigns the current players number, and the current player of the round
             currentPlayerNum = Player.switchPlayer(currentPlayerNum,players,bankruptPlayers);
@@ -67,6 +70,7 @@ public class GameController {
             dice1.rollDice();
             dice2.rollDice();
 
+            players[1].setBalance(-100);
 
             sumOfDice = dice1.getFaceValue() + dice2.getFaceValue();
             // Moves the player with the sum of the 2 dice.
@@ -89,13 +93,6 @@ public class GameController {
             // Moves the currentPlayer on the board GUI
             PlayerView.updatePosition(fields, gui_players, players);
 
-            // ONLY FOR TESTING DELETE WHEN PROJECT IS DONE!!!!
-            //****************************************************
-            //****************************************************
-//                owners.setTileOwner(1,1);
-//                owners.setTileOwner(3,1);
-            //****************************************************
-            //****************************************************
 
 
             while(true){
@@ -139,10 +136,6 @@ public class GameController {
             }
             // Checks for any bankrupt players so they will be skipped
             bankruptPlayers.updateBankruptPlayers(players);
-            // The win screen with a button to close the game.
-            if(EventsView.hasWon(bankruptPlayers, gui)){
-                System.exit(0);
-            }
 
 
         }
