@@ -71,6 +71,7 @@ public class GameController {
             currentPlayerNum = Player.switchPlayer(currentPlayerNum,players,bankruptPlayers);
             currentPlayer = players[currentPlayerNum];
 
+            // in case that the player is on the jail tile the player should get the til effect of jail before hte players turn begins
             if(currentPlayer.isInJail()){
                 // Triggers the effect that a tile can have ex: Pay rent, draw a chance card, go to jail ect.
                 tileEffects[10].executeTile(currentPlayer, -1);

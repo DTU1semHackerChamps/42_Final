@@ -19,6 +19,7 @@ public class FerryTile extends OwnableTile {
      * @param currentPlayer The player landing on the tile
      * @param sumOfDice Sum of 2 dice rolls
      */
+
     @Override
     public void executeTile(Player currentPlayer, int sumOfDice) {
         int playerPosition = currentPlayer.getPosition();

@@ -68,19 +68,15 @@ public class PlayerView {
      */
 
     public static void updatePosition(GUI_Field[] fields, GUI_Player[] gui_Players, Player[] players) {
-
         for (int i = 0; i < fields.length; i++) {
             fields[i].removeAllCars();
-
             for (int j = 0; j < gui_Players.length; j++) {
 
                 if (players[j].getPosition() == i) {
                     fields[i].setCar(gui_Players[j], true);
                 }
-
             }
         }
-
     }
 
     /**

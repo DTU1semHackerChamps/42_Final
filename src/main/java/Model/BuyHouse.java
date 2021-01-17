@@ -17,9 +17,11 @@ public class BuyHouse {
         boolean builtHouse = false;
         int priceOfHouse;
 
+        //exception to avoid array out of bounds failure from buildingAvailability().
         if(position != -1){
             priceOfHouse = data[position].getPriceOfHouse();
 
+            //This if statement checks if there is a hotel or less
             if ((currentPlayer.getBalance() >= priceOfHouse) && (tileOwners.getTileHouses(position) <= 4) && (tileOwners.getTileHotel(position) < 1)) {
 
                 tileOwners.addTileHouses(position);

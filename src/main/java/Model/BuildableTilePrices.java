@@ -62,6 +62,8 @@ public class BuildableTilePrices {
      * @param tilesData
      * @return
      */
+
+
     public static int[] rentPrice(int position, BuildableTilePrices[] tilesData){
         int[] rentStage = new int[6];
         rentStage[0] = tilesData[position].getRentOfGround();

@@ -14,6 +14,12 @@ public class ChanceCardController {
 
     }
 
+    /**
+     * This method initializes the chanceCardArray that is used in ChanceCardTile class
+     * @param currentPlayer the player whose turn it is.
+     * @param players all the players in the game.
+     * @return the method returns the cardArray.
+     */
     public static ChanceCard[] cardArrayInit(Player currentPlayer,Player[] players){
         ChanceCard[] chanceCards = new ChanceCard[37];
 

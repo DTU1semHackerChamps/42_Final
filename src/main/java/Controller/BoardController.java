@@ -12,7 +12,17 @@ import java.util.HashMap;
 public class BoardController {
 
 
-
+    /**
+     * This method initializes an array of the different tiles in the specific order of a the Matador game.
+     * @param prices prices is used for calculating rent prices.
+     * @param players players is the array of all the player in the game and related info.
+     * @param owners owners is an array with the the owners of properties and the amount of houses.
+     * @param propertyGroups property groups is used to check if a person is holding all of the properties in a category.
+     * @param cardList cardList is used to make ChanceCardTile work.
+     * @param gui gui is used to view the chance card texts
+     * @param stringList stringList is used to get strings for the respective chanceCard message keywords.
+     * @return
+     */
     public static Tile[] boardTiles(BuildableTilePrices[] prices, Player[] players, TileOwners owners, PropertyGroup[] propertyGroups, ChanceCard[] cardList, GUI gui, HashMap<String,String> stringList){
         Tile[] boardTiles = new Tile[40];
 
