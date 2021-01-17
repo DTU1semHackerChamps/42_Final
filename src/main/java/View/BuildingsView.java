@@ -63,7 +63,7 @@ public class BuildingsView {
             if(availableTiles==0){
 //                streetNames = new String[1];
 //                streetNames[0] = "Du har ingen grunde.";
-                gui.showMessage("Du har ingen grunde at bygge på");
+                gui.showMessage(stringList.get("noPropertiesToBuildOnMsg"));
             }else {
 
                 String propertyName = gui.getUserSelection(stringList.get("chooseBuildingProperty"), streetNames);

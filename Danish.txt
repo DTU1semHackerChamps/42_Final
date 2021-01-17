@@ -182,3 +182,5 @@ winMessage
  har vundet!
 goToJailMsg
  er blevet fængslet
+noPropertiesToBuildOnMsg
+Du har ingen grunde at bygge på
