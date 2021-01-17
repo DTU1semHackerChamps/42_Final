@@ -58,11 +58,23 @@ public class PropertyGroup {
         return tileGroup;
     }
 
+    /**
+     * Checks if the currentPlayer on a specific position has all buildable tiles of the same catagory.
+     * @param owner array that also holds the owners of the specific tiles on the board.
+     * @param currentPlayer
+     * @param tilePosition the position that is checked.
+     * @param tileGroups holds the data about which tiles are grouped together.
+     * @return returns true if the owner of the tile owns all tiles in the category.
+     */
     public static boolean hasGroup(TileOwners owner, Player currentPlayer, int tilePosition, PropertyGroup[] tileGroups){
+
         boolean hasGroup = true;
         int numOfPlayer = currentPlayer.getPlayerNum();
+        //each group of buildable tiles has a designated array index. This line of code saves what it is.
         int tileGroupNumber = PropertyGroup.groupNumber(tileGroups,tilePosition);
+        //each array in the tileGroups array holds the positions of the tiles in that group. This for loop checks those positions and who their owner is.
         for (int i = 0; i < tileGroups[tileGroupNumber].getPropertyGroup().length; i++) {
+            //if any of the positions has another owner than the currentPlayer this statement returns false.
             if(owner.getTileOwner(tileGroups[tileGroupNumber].getPropertyGroup()[i]) != numOfPlayer){
                 hasGroup = false;
             }

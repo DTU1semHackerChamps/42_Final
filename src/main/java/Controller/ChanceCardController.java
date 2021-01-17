@@ -79,7 +79,7 @@ public class ChanceCardController {
             temp = cardList[index];
             cardList[index] = cardList[i];
             cardList[i] = temp;
-            System.out.println(cardList[i]);
+            //System.out.println(cardList[i]);
         }
 
     }
@@ -103,7 +103,6 @@ public class ChanceCardController {
 //            chanceCards[i] = tempChanceCards;
 //
 
-
         tempChanceCard = chanceCards[length - 1];
 
         for(int i = length-1; i > 0; i--){
@@ -111,41 +110,7 @@ public class ChanceCardController {
             chanceCards[i] = chanceCards[i - 1];
 
         }
-
         chanceCards[0] = tempChanceCard;
-
-
-
-
     }
 
-    public static void main(String[] args) {
-        int[] chanceCards = {1,2,3,4,5,6,7,8,9,10};
-        int length = chanceCards.length;
-        int tempChanceCard;
-
-        for (int i = 0; i < length; i++) {
-            System.out.print(chanceCards[i]+" ");
-
-        }
-
-        tempChanceCard = chanceCards[length - 1];
-
-        for(int i = length-1; i > 0; i--){
-
-            chanceCards[i] = chanceCards[i - 1];
-
-        }
-
-        chanceCards[0] = tempChanceCard;
-
-        System.out.println();
-        for (int i = 0; i < length; i++) {
-            System.out.print(chanceCards[i]+" ");
-
-        }
-
-
-
-    }
 }
