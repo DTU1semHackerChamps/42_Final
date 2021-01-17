@@ -1,6 +1,8 @@
 package View;
 
 import Model.*;
+import Model.Player.Player;
+import Model.Player.PlayerColor;
 import gui_fields.GUI_Street;
 import gui_main.GUI;
 

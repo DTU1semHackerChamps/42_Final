@@ -1,11 +1,10 @@
 package View;
 
 import Model.*;
-import gui_fields.GUI_Field;
+import Model.Player.Player;
 import gui_fields.GUI_Street;
 import gui_main.GUI;
 
-import java.io.IOException;
 import java.util.HashMap;
 
 public class BuildingsView {
@@ -36,7 +35,7 @@ public class BuildingsView {
      * @param gui
      * @return int value of the property position on the game board.
      */
-    public static int buildingAvailability(HashMap<String, String> stringList,GUIBoardData[] boardData, GUI gui, Player currentPlayer, TileOwners owners, PropertyGroup[] propertyGroups){
+    public static int buildingAvailability(HashMap<String, String> stringList, GUIBoardData[] boardData, GUI gui, Player currentPlayer, TileOwners owners, PropertyGroup[] propertyGroups){
 
         int propertyPosition = -1;
 

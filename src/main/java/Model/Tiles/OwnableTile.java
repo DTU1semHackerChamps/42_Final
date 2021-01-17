@@ -1,6 +1,6 @@
 package Model.Tiles;
 
-import Model.Player;
+import Model.Player.Player;
 import Model.TileOwners;
 
 public abstract class OwnableTile extends Tile {

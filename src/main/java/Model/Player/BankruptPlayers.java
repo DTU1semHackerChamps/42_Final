@@ -1,4 +1,4 @@
-package Model;
+package Model.Player;
 
 public class BankruptPlayers {
     private boolean [] bankruptPlayers;

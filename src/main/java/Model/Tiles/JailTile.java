@@ -1,6 +1,6 @@
 package Model.Tiles;
 
-import Model.Player;
+import Model.Player.Player;
 
 public class JailTile extends Tile{
 

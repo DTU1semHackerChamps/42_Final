@@ -2,7 +2,7 @@ package Model.Tiles;
 
 import Controller.ChanceCardController;
 import Model.ChanceCards.ChanceCard;
-import Model.Player;
+import Model.Player.Player;
 import View.EventsView;
 import gui_main.GUI;
 

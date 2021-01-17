@@ -1,7 +1,6 @@
 package Model;
 
-import gui_main.GUI;
-
+import Model.Player.BankruptPlayers;
 public class GameEvents
 {
     /**

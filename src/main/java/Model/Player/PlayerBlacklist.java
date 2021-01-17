@@ -1,4 +1,6 @@
-package Model;
+package Model.Player;
+
+import Model.Player.Player;
 
 public class PlayerBlacklist {
 

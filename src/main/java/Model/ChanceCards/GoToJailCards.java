@@ -1,6 +1,6 @@
 package Model.ChanceCards;
 
-import Model.Player;
+import Model.Player.Player;
 
 public class GoToJailCards extends ChanceCard {
     public GoToJailCards(Player[] players, String msgKeyWord) {

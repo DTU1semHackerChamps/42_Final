@@ -2,6 +2,7 @@ package Controller;
 
 import Model.*;
 import Model.ChanceCards.ChanceCard;
+import Model.Player.Player;
 import Model.Tiles.*;
 import gui_main.GUI;
 
@@ -12,7 +13,7 @@ public class BoardController {
 
 
 
-    public static Tile[] boardTiles(BuildableTilePrices[] prices, Player currentPlayer, Player[] players, TileOwners owners, PropertyGroup[] propertyGroups, ChanceCard[] cardList, GUI gui, HashMap<String,String> stringList){
+    public static Tile[] boardTiles(BuildableTilePrices[] prices, Player[] players, TileOwners owners, PropertyGroup[] propertyGroups, ChanceCard[] cardList, GUI gui, HashMap<String,String> stringList){
         Tile[] boardTiles = new Tile[40];
 
         boardTiles[0] = new StartTile(players);

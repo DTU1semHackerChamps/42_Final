@@ -1,6 +1,6 @@
 package Model.Tiles;
 
-import Model.Player;
+import Model.Player.Player;
 import Model.PropertyGroup;
 import Model.TileOwners;
 import Model.BuildableTilePrices;

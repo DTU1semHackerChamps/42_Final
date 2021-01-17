@@ -1,9 +1,7 @@
 package Model;
 
 
-import Model.BuildableTilePrices;
-import Model.Player;
-import Model.TileOwners;
+import Model.Player.Player;
 
 public class BuyHouse {
 

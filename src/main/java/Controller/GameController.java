@@ -2,6 +2,9 @@ package Controller;
 
 import Model.*;
 import Model.ChanceCards.ChanceCard;
+import Model.Player.BankruptPlayers;
+import Model.Player.Player;
+import Model.Player.PlayerColor;
 import Model.Tiles.Tile;
 import View.*;
 import gui_fields.GUI_Player;
@@ -41,7 +44,7 @@ public class GameController {
         ChanceCard[] cardList = ChanceCardController.cardArrayInit(currentPlayer,players);
         ChanceCardController.cardShuffle(cardList);
         // Loads the effects that tiles do automatically.
-        Tile[] tileEffects = BoardController.boardTiles(buildTilePrices,currentPlayer,players,owners,propertyGroups, cardList, gui, stringList);
+        Tile[] tileEffects = BoardController.boardTiles(buildTilePrices,players,owners,propertyGroups, cardList, gui, stringList);
         // Loads the dice objects
         Dice dice1 = new Dice(0);
         Dice dice2 = new Dice(0);
@@ -140,7 +143,7 @@ public class GameController {
                 }
 
                 // Changes the border color of a property to the same color as the player owning it.
-                PropertyOwnerView.updateBorderColor(fields,owners,PlayerColor.initPlayerColor());
+                PropertyOwnerView.updateBorderColor(fields,owners, PlayerColor.initPlayerColor());
 
             }
             // Checks for any bankrupt players so they will be skipped

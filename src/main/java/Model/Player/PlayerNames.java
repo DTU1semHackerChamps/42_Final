@@ -1,5 +1,6 @@
-package Model;
+package Model.Player;
 
+import Model.Player.Player;
 import gui_fields.GUI_Player;
 
 public class PlayerNames {

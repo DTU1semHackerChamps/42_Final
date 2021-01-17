@@ -1,7 +1,7 @@
 package Controller;
 
 import Model.ChanceCards.*;
-import Model.Player;
+import Model.Player.Player;
 
 import java.util.Random;
 
