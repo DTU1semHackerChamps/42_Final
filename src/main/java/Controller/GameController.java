@@ -134,7 +134,7 @@ public class GameController {
 
                 }else if(menuString.equals(stringList.get("sellOnPropertyMsg"))){
                     int sellBuildingPosition = PropertyOwnerView.sellHouseView(stringList,GUIBoardData.tilesGUIData(stringList),gui,players[currentPlayerNum],owners,propertyGroups);
-                    SellProperty.sellHouse(buildTilePrices,currentPlayer,sellBuildingPosition,owners);
+                    SellHouse.sellHouse(buildTilePrices,currentPlayer,sellBuildingPosition,owners);
                     PlayerView.updateBalances(guiPlayers,players);
                     BuildingsView.updateBuildings(fields,owners);
                 }else{

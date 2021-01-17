@@ -2,7 +2,7 @@ package Model;
 
 import Model.Player.Player;
 
-public class SellProperty {
+public class SellHouse {
 
 
     /**
@@ -18,7 +18,6 @@ public class SellProperty {
         if(position != -1) {
             priceOfHouse = price[position].getPriceOfHouse();
 
-
             if (tileOwners.getTileHotel(position) == 1) {
                 tileOwners.setTileHotel(position, 0);
                 tileOwners.setTileHouses(position, 0);
@@ -29,28 +28,5 @@ public class SellProperty {
                 currentPlayer.addBalance(priceOfHouse / 2);
             }
         }
-    }
-
-
-    /**
-     * Methode for selling a property to another player for an agreed price.
-     * @param currentPlayer
-     * @param position
-     * @param bid
-     * @param tileOwners
-     * @param players
-     * @param playerNum
-     * @return soldProperty
-     */
-    public static boolean sellProperty(Player currentPlayer, int position, int bid, TileOwners tileOwners, Player[] players, int playerNum) {
-        boolean soldProperty = false;
-
-        if (players[playerNum].getBalance() > bid) {
-            players[playerNum].addBalance(-bid);
-            currentPlayer.addBalance(bid);
-            tileOwners.setTileOwner(position, playerNum);
-            soldProperty = true;
-        }
-        return soldProperty;
     }
 }
