@@ -11,7 +11,6 @@ public class ShuffelMechanicTest {
 
     @Test
     public void cardShuffleMechanic(){
-
         Player[] players = Player.playerList(2);
         ChanceCard[] chanceCards1 = new ChanceCard[40];
         ChanceCard[] chanceCards2 = new ChanceCard[40];
@@ -25,9 +24,7 @@ public class ShuffelMechanicTest {
 
         for (int i = 0; i < chanceCards1.length; i++) {
             //System.out.println(i);
-            if(!chanceCards1[i].useChanceCard(players[0]).equals(chanceCards2[i].useChanceCard(players[0]))){
-                break;
-            }
+            assertTrue(chanceCards1[i].useChanceCard(players[0]).equals(chanceCards2[i].useChanceCard(players[0])));
         }
 
         int numOfEquals=0;
@@ -38,7 +35,8 @@ public class ShuffelMechanicTest {
             ChanceCardController.cardShuffle(chanceCards2);
             boolean a = false;
 
-            // Checks for
+            // Checks for if an i position's string is equal. If it is a is true and the for loop breaks.
+            // The chance of the forloop not breaking after the shuffle should be nearly impossible
             for (int i = 0; i < chanceCards1.length; i++) {
                 if(!chanceCards1[i].useChanceCard(players[0]).equals(chanceCards2[i].useChanceCard(players[0]))){
                     a = true;
