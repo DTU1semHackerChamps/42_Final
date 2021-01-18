@@ -17,8 +17,9 @@ public class BuyProperty {
         boolean propertyBought= false;
         int position = currentPlayer.getPosition();
         int tilePrice = buildTileData[position].getPropertyPrice() + companyTilePrices[position].getPriceOfCompany();
-
+        //Exception for if the property doesnt have a price.
         if((buildTileData[position].getPropertyPrice() != 0) || (companyTilePrices[position].getPriceOfCompany() != 0)) {
+            //If the player has enough balance the property is bought.
             if (currentPlayer.getBalance() > tilePrice) {
                 if (owners.getTileOwner(position) == -1) {
                     currentPlayer.addBalance(-tilePrice);

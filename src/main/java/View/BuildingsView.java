@@ -59,6 +59,7 @@ public class BuildingsView {
                     k++;
                 }
             }
+            // if the
             if(availableTiles==0){
 //                streetNames = new String[1];
 //                streetNames[0] = "Du har ingen grunde.";

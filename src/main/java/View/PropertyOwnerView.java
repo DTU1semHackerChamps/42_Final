@@ -33,10 +33,14 @@ public class PropertyOwnerView {
      * @return housePosition
      */
     public static int sellHouseView(HashMap<String, String> stringList, GUIBoardData[] boardData, GUI gui, Player currentPlayer, TileOwners owners, PropertyGroup[] propertyGroups) {
-
+        //used for an exception in the SellHouse class
         int housePosition = -1;
         int availableTiles = 0;
+
+        //Used to hold the strings for later.
         String[] tempStreetNames = new String[boardData.length];
+
+        //Puts all the available properties name strings on their respective positions.
         for (int i = 0; i < boardData.length; i++) {
             tempStreetNames[i] = " ";
             if (currentPlayer.getPlayerNum() == owners.getTileOwner(i) && PropertyGroup.hasGroup(owners, currentPlayer, i, propertyGroups)) {
@@ -61,10 +65,12 @@ public class PropertyOwnerView {
             }
         }
 
+        //If there is no available tiles.
         if (availableTiles == 0) {
             gui.showMessage(stringList.get("noSellableBuildings"));
         } else {
 
+            //Filtered array of the streetnames i used here.
             String propertyName = gui.getUserSelection(stringList.get("chooseSellableBuildings"), streetNames);
 
             for (int i = 0; i < boardData.length; i++) {
@@ -77,6 +83,10 @@ public class PropertyOwnerView {
         return housePosition;
     }
 
+    /**
+     * This method loads the strings for the tile description. This could be added to the language files.
+     * @param fields
+     */
     public static void tileDescriptions(GUI_Street[] fields) {
         String rent = "    Leje af ejendommen ";
         String hHOne = "\\n Hvert hus => 1000 kr. \\nEt hotel => 1000 + 4 huse";

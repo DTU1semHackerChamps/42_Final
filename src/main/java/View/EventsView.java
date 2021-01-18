@@ -9,6 +9,7 @@ import java.util.HashMap;
 
 public class EventsView {
 
+
     public static boolean hasWon (HashMap<String,String> stringList, BankruptPlayers bankruptPlayers, GUI gui, GUI_Player[] guiPlayer){
         boolean endGame = false;
         int i = GameEvents.whoWon(bankruptPlayers);

@@ -6,6 +6,12 @@ public class PropertyGroup {
 
     private int [] tileGroup;
 
+    /**
+     * This constructor chooses between if it makes a 2 or 3 length array buy. And is used to save which tiles are grouped together.
+     * @param one
+     * @param two
+     * @param three If this variable is 0 the array only be the first two variables.
+     */
     public PropertyGroup(int one, int two, int three){
         if(three != 0) {
             this.tileGroup = new int[]{one, two, three};
@@ -32,8 +38,17 @@ public class PropertyGroup {
         return tileGroups;
     }
 
+    /**
+     * Checks at what array index a specific tile position is. This is used to determine what number group the tile is in.
+     * @param tileGroups
+     * @param tilePosition
+     * @return returns the group number the tile position is in.
+     */
+
     public static int groupNumber(PropertyGroup[] tileGroups, int tilePosition){
         int groupNumber = 0;
+
+        //uses nested forloops to check through every array in the PropertyGroup[].
         for (int i = 0; i < tileGroups.length; i++) {
             for (int j = 0; j < tileGroups[i].getPropertyGroup().length; j++) {
                 if(tilePosition == tileGroups[i].getPropertyGroup()[j]){

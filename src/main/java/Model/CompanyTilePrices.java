@@ -35,7 +35,7 @@ public class CompanyTilePrices {
     }
 
     /** data object
-     * array of the price stages
+     * array of the price stages. Could be used somewhere
      * @param position
      * @param companyData
      * @return
