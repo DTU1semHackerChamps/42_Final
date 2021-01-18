@@ -18,4 +18,5 @@ public class JailCards extends ChanceCard {
         currentPlayer.setJailCard(true) ;
         return msgKeyWord;
     }
+
 }
