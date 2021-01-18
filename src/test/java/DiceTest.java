@@ -12,32 +12,32 @@ public class DiceTest {
         Dice testdice = new Dice(6);
 
         int[] dicesidestest = new int[6];
+        int outOfRange = 0;
 
         for (int i = 0; i < 60000; i++) {
             testdice.rollDice();
             int facevalue = testdice.getFaceValue();
 
             switch (facevalue) {
-                case 1:
-                    dicesidestest[0]++;
+                case 1: dicesidestest[0]++;
                     break;
-                case 2:
-                    dicesidestest[1]++;
+                case 2: dicesidestest[1]++;
                     break;
-                case 3:
-                    dicesidestest[2]++;
+                case 3: dicesidestest[2]++;
                     break;
-                case 4:
-                    dicesidestest[3]++;
+                case 4: dicesidestest[3]++;
                     break;
-                case 5:
-                    dicesidestest[4]++;
+                case 5: dicesidestest[4]++;
                     break;
-                case 6:
-                    dicesidestest[5]++;
+                case 6: dicesidestest[5]++;
                     break;
+                default: outOfRange++;
             }
+        }
 
+        for (int i = 0; i < 5; i++) {
+            assertEquals(10000, dicesidestest[i], 400);
+            assertEquals(0,outOfRange);
         }
 
         System.out.println("Dice facevalue results 1-6: ");
@@ -47,11 +47,6 @@ public class DiceTest {
         System.out.println(dicesidestest[3]);
         System.out.println(dicesidestest[4]);
         System.out.println(dicesidestest[5]);
-
-        for (int i = 0; i < 5; i++) {
-            assertEquals(10000, dicesidestest[i], 400);
-
-        }
     }
     // tests that our string with the rolldice result works properly
     @Test
