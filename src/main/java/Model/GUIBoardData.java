@@ -8,6 +8,14 @@ public class GUIBoardData {
     private String tileDescription;
     private float hue, sat, bright;
 
+    /**
+     * Constructor for GUIBoardData used in the BoardView class
+     * @param streetName the name of the street on the individual tiles
+     * @param tileDescription description is current not used
+     * @param hue the hue for coloring the individual tiles
+     * @param sat the saturation for coloring the individual tiles
+     * @param bright the brightness for coloring the individual tiles
+     */
     public GUIBoardData(String streetName, String tileDescription, float hue, float sat, float bright){
         this.streetName = streetName;
         this.tileDescription = tileDescription;
