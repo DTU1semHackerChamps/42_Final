@@ -22,6 +22,11 @@ public class ReceiveMoneyCards extends ChanceCard{
      * @return
      */
 
+    /**
+     * Adds a money amount to the currentPlayer's balance
+     * @param currentPlayer
+     * @return
+     */
     @Override
     public String useChanceCard(Player currentPlayer) {
         currentPlayer.addBalance(moneyAmount);
