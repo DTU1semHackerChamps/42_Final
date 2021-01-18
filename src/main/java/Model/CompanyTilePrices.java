@@ -35,7 +35,7 @@ public class CompanyTilePrices {
     }
 
     /** data object
-     * array of the price stages. Could be used somewhere
+     * array of the price stages. Could be used somewhere but isn't currently.
      * @param position
      * @param companyData
      * @return

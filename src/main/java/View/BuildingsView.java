@@ -59,10 +59,8 @@ public class BuildingsView {
                     k++;
                 }
             }
-            // if the
+            // if there is no available street names this message vil be displayed instead of a list of the available properties.
             if(availableTiles==0){
-//                streetNames = new String[1];
-//                streetNames[0] = "Du har ingen grunde.";
                 gui.showMessage(stringList.get("noPropertiesToBuildOnMsg"));
             }else {
 
